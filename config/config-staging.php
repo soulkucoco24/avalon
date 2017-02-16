@@ -2,6 +2,7 @@
 
 return [
 
+    //hello
     'database' => array(
         'adapter' => 'Mysql',
         'host' =>  '123.59.59.233',
