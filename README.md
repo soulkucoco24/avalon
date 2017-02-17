@@ -1,4 +1,4 @@
-![](https://raw.github.com/niboge/avalon/master/doc/logo-saber.jpg)
+![](https://raw.github.com/niboge/avalon/blob/master/docs/logo-saber.jpg)
 
 # avalon BY 神奇四侠
 
