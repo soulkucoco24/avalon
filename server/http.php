@@ -1,7 +1,7 @@
 <?php
 define('DEBUG', 'on');
 define("WEBPATH", realpath(__DIR__ . '/../'));
-require dirname(__DIR__) . '/vendor/swoole_web/lib_config.php';
+require dirname(__DIR__) . '/vendor/SwooleWeb/lib_config.php';
 
 //设置PID文件的存储路径
 Swoole\Network\Server::setPidFile(__DIR__ . '/http_server.pid');
