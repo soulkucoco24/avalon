@@ -20,14 +20,14 @@ class Auth
     public $errMessage;
 
     static $login_url = '/login.php?';
-    static $username = 'username';
-    static $password = 'password';
+    static $username = 'account';
+    static $password = 'pwd';
     static $userid = 'id';
 
     static $lastlogin = 'lastlogin';
     static $lastip = 'lastip';
     static $session_prefix = '';
-    static $mk_password = 'username,password';
+    static $mk_password = 'account,pwd';
     static $password_hash = 'sha1';
 
     static $password_cost = 10;
@@ -136,6 +136,8 @@ class Auth
             {
                 $_SESSION[self::$session_prefix . 'isLogin'] = true;
                 $_SESSION[self::$session_prefix . 'user_id'] = $this->user['id'];
+                $_SESSION[self::$session_prefix . 'nick_name'] = $this->user['nick_name'];
+                $_SESSION[self::$session_prefix . 'level'] = $this->user['level'];
                 return true;
             }
             else

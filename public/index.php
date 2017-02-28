@@ -1,2 +1,3 @@
 <?php
-echo 'hello world';
+// var_dump(Swoole::$php->hooks[2]);
+// var_dump(Swoole::$php->router);

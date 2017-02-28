@@ -69,13 +69,15 @@ class HttpServer extends Swoole\Protocol\WebServer implements  Swoole\IFace\Prot
 
     function onConnect($serv, $client_id, $from_id)
     {
-        $this->log("Event: client[#$client_id@$from_id] connect");
+        $pid = getmypid();
+        $this->log("Event: client[#$client_id@$from_id #$pid] connect");
     }
 
 
     function onClose($serv, $client_id, $from_id)
     {
-        $this->log("Event: client[#$client_id@$from_id] close");
+        $pid = getmypid();
+        $this->log("Event: client[#$client_id@$from_id #$pid] close");
         $this->cleanBuffer($client_id);
     }
 
@@ -563,8 +565,8 @@ class HttpServer extends Swoole\Protocol\WebServer implements  Swoole\IFace\Prot
             }
             catch (\Exception $e)
             {
-                $response->setHttpStatus(500);
-                $response->body = $e->getMessage() . '!<br /><h1>' . self::SOFTWARE . '</h1>';
+                // $response->setHttpStatus(500);
+                $response->body .= $e->getMessage() . '!<br /><h1>' . self::SOFTWARE . '</h1>';
             }
             ob_end_clean();
         }

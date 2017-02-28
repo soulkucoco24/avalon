@@ -69,14 +69,14 @@ class Swoole
      */
     static $modules = array(
 		'redis' => true,  //redis
-        'mongo' => true,  //mongodb
+        'mongo' => false,  //mongodb
     	'db' => true,  //数据库
-        'codb' => true, //并发MySQLi客户端
+        'codb' => false, //并发MySQLi客户端
     	'tpl' => true, //模板系统
     	'cache' => true, //缓存
     	'event' => true, //异步事件
     	'log' => true, //日志
-    	'upload' => true, //上传组件
+    	'upload' => false, //上传组件
     	'user' => true,   //用户验证组件
         'session' => true, //session
         'http' => true, //http

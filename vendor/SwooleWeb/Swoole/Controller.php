@@ -142,6 +142,22 @@ class Controller extends Object
     }
 
     /**
+     * 显示运行时间和内存占用
+     *
+     * @return string
+     */
+    protected function showStress()
+    {
+        // $runtime = $this->swoole->runtime();
+
+        $stress = '登录总人数: ' . 2;
+        $stress .= ' | TCP请求频率峰值:' . '70'.'/min';
+        $stress .= ' | worker总数:' . '5';
+        $stress .= ' | worker等待时间峰值:' . '5'.'s';
+        return $stress;
+    }
+
+    /**
      * 显示跟踪信息
      * @return string
      */
@@ -172,24 +188,26 @@ class Controller extends Object
         }
         $_trace['加载文件数目'] = count($included_files);
         $_trace['PHP执行占用'] = $this->showTime();
+        
+        $_trace['压力与稳定性(目前是写死的)'] = $this->showStress();
         $_trace = array_merge($this->traceInfo, $_trace);
 
         // 调用Trace页面模板
         $html = <<<HTMLS
 <style type="text/css">
 #swoole_trace_content  {
-font-family:		Consolas, Courier New, Courier, monospace;
-font-size:			14px;
-background-color:	#fff;
-margin:				40px;
-color:				#000;
-border:				#999 1px solid;
-padding:			20px 20px 12px 20px;
+font-family:        Consolas, Courier New, Courier, monospace;
+font-size:          14px;
+background-color:   #fff;
+margin:             40px;
+color:              #000;
+border:             #999 1px solid;
+padding:            20px 20px 12px 20px;
 }
 </style>
-	<div>
-		<fieldset style="margin:5px;">
-		<div style="overflow:auto;text-align:left;">
+    <div>
+        <fieldset style="margin:5px;">
+        <div style="overflow:auto;text-align:left;">
 HTMLS;
         $html .= "<a href='".Tool::url_merge('_show_request', '1')."'>显示请求参数</a> |
         <a href='".Tool::url_merge('_show_session', '1')."'>显示会话信息</a> |
@@ -242,7 +260,7 @@ HTMLS;
         {
             $output = '<fieldset style="margin:5px;"><div style="overflow:auto;text-align:left;">';
             $this->session->start();
-            $output .= "<h2>SESSION:</h2>" . Tool::dump($request->session);
+            $output .= "<h2>SESSION:</h2>" . Tool::dump($this->swoole->request->session);
             $html .= $output."</div></fieldset>";
         }
 

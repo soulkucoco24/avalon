@@ -1,0 +1,85 @@
+
+CREATE TABLE `room` (
+  `id` int(11) unsigned NOT NULL AUTO_INCREMENT,
+  `name` varchar(32) NOT NULL DEFAULT '' COMMENT '房间名',
+  `password` varchar(64) NOT NULL DEFAULT '' COMMENT '密码',
+  `salt` varchar(32) NOT NULL DEFAULT '' COMMENT '口令',
+  `status` tinyint(1) NOT NULL DEFAULT '0' COMMENT '是否启用（2：有人且加密 1：有人，0：空）',
+`is_locked` tinyint(1) NOT NULL DEFAULT '0' COMMENT '是否锁定（1：锁定(游戏开始)，0：未锁定）',
+  `created_time` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP COMMENT '创建时间',
+  `updated_time` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP COMMENT '最后更新时间',
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB  DEFAULT CHARSET=utf8 COMMENT='房间表';
+                                                
+CREATE TABLE `role` (
+  `id` int(11) unsigned NOT NULL AUTO_INCREMENT,
+  `name` varchar(32) NOT NULL DEFAULT '' COMMENT '角色名',
+  `camp` tinyint(1) NOT NULL DEFAULT '1' COMMENT '阵营（1：好人，0：坏人）',
+`longtext`  longtext COMMENT '角色说明文字',
+  `created_time` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP COMMENT '创建时间',
+  `updated_time` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP COMMENT '最后更新时间',
+
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB  DEFAULT CHARSET=utf8 COMMENT='角色表';
+                                                
+CREATE TABLE `user` (
+  `id` int(11) unsigned NOT NULL AUTO_INCREMENT,
+  `account` varchar(12) DEFAULT NULL COMMENT '账户',
+  `real_name` char(5) DEFAULT NULL,
+  `nick_name` varchar(13) DEFAULT NULL,
+  `pwd` varchar(80) DEFAULT NULL,
+  `salt` char(11) DEFAULT NULL,
+  `mobile` char(12) DEFAULT NULL,
+  `score` int(6) DEFAULT '0',
+  `win` int(8) DEFAULT '0',
+  `lose` int(8) DEFAULT '0',
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB AUTO_INCREMENT=2 DEFAULT CHARSET=utf8;
+                                                
+CREATE TABLE `game` (
+  `id` int(11) unsigned NOT NULL AUTO_INCREMENT,
+  `player_num` int(11) NOT NULL COMMENT '玩家数目',
+  `game_type`  int(11) NOT NULL COMMENT '所用游戏流程和规则（配置文件）',
+    `game_process`  int(11) NOT NULL COMMENT '游戏进程',
+  `status` tinyint(1) NOT NULL DEFAULT '1' COMMENT '状态 1正在进行 2已结束 ',
+`result` tinyint(1) NOT NULL DEFAULT '1' COMMENT '结果 1好人胜利 2坏人胜利 3中断 ',
+  `created_time` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP COMMENT '创建时间',
+  `updated_time` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP COMMENT '最后更新时间',
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB  DEFAULT CHARSET=utf8 COMMENT='游戏表';
+                                                
+CREATE TABLE `user_role` (
+  `id` int(11) unsigned NOT NULL AUTO_INCREMENT,
+  `user_id` int(11) NOT NULL COMMENT '用户id use表主键',
+  `role_id`  int(11) NOT NULL COMMENT '角色id role表主键',
+ `game_id`  int(11) NOT NULL COMMENT '游戏id game表主键', 
+ `game_status` tinyint(1) NOT NULL DEFAULT '1' COMMENT '游戏状态（1：正在进行，2：结束）,3:中断',
+`game_result` tinyint(1) NOT NULL DEFAULT '1' COMMENT '游戏结果（1：胜利，2：失败,3:中断',
+  `created_time` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP COMMENT '创建时间',
+  `updated_time` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP COMMENT '最后更新时间',
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB  DEFAULT CHARSET=utf8 COMMENT='用户角色关联表';
+                                                
+CREATE TABLE `team` (
+  `id` int(11) unsigned NOT NULL AUTO_INCREMENT,
+  `captain_id` int(11) NOT NULL COMMENT '队长的用户id use表主键',
+ `all_member_num` int(11) NOT NULL COMMENT '包含队长的队员总数量',
+  `all_member_id`  varchar(64) NOT NULL DEFAULT '' COMMENT '包含队长的队员id 逗号隔开',
+ `game_id`  int(11) NOT NULL COMMENT '游戏id game表主键', 
+`result` tinyint(1) NOT NULL DEFAULT '1' COMMENT '游戏结果（1组队成功，2：组队失败,3:中断',
+  `created_time` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP COMMENT '创建时间',
+  `updated_time` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP COMMENT '最后更新时间',
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB  DEFAULT CHARSET=utf8 COMMENT='组队表';
+                                                
+CREATE TABLE `vote` (
+  `id` int(11) unsigned NOT NULL AUTO_INCREMENT,
+  `user_id` int(11) NOT NULL COMMENT '用户id use表主键',
+ `game_id`  int(11) NOT NULL COMMENT '游戏id game表主键', 
+ `type`  int(11) NOT NULL COMMENT '投票环节 1 组队投票 2任务投票', 
+`team_vote` tinyint(1) NOT NULL DEFAULT '1' COMMENT '组队投票内容（1成功，2：失败,3:中断',
+`mission_vote` tinyint(1) NOT NULL DEFAULT '1' COMMENT '任务投票内容（1成功，2：失败,3:中断',
+  `created_time` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP COMMENT '创建时间',
+  `updated_time` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP COMMENT '最后更新时间',
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB  DEFAULT CHARSET=utf8 COMMENT='投票表';
