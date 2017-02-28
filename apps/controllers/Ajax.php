@@ -8,6 +8,6 @@ class Ajax extends Swoole\Controller
 
     function test()
     {
-        return array('json' => 'swoole');
+        return array('data' => 'swoole');
     }
 }

@@ -14,8 +14,7 @@ class Page extends Swoole\Controller
     //hello world
     function index()
     {
-        // Swoole\Auth::loginRequire();
-        $this->assign('data',['game_name'=>'阿瓦隆','players'=>[5,12,'5-12'],3=>'/room/1'])->display('index.tpl.php');
+        $this->assign('data',['game_name'=>'阿瓦隆','players'=>[5,12,'5-12'],3=>'/room/1',4=>$this->user->getUserInfo()])->display('index.tpl.php');
     }
 
     function detail()

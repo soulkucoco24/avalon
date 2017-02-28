@@ -34,6 +34,10 @@ class Controller extends Object
             Filter::request();
         }
         $swoole->__init();
+
+        if( !$this->session->isStart)
+            $this->session->start();
+        $this->tpl_var['user'] = $this->user->getUserInfo();
     }
 
     /**

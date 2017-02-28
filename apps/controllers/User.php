@@ -6,7 +6,6 @@ class User extends Swoole\Controller
 {
     function login()
     {
-        $this->session->start();
         //已经登录了，跳转到
         if ($this->user->isLogin())
         {
@@ -35,7 +34,6 @@ class User extends Swoole\Controller
 
     function home()
     {
-        $this->session->start();
         var_dump($_SESSION);
         Swoole\Auth::loginRequire();
         $this->showTrace();
@@ -43,14 +41,19 @@ class User extends Swoole\Controller
 
     function logout()
     {
-        $this->session->start();
+        $this->is_ajax = true;
         $isOk = $this->user->logout();
-        echo '已登出';
+        return ['msg'=>'已登出','err_code'=>0];
     }
 
 
     function getInfo()
     {
         $uid = $this->request->get('id','int');
+    }
+
+    function index()
+    {
+        echo 'index ';
     }
 }
