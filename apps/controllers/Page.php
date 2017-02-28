@@ -14,15 +14,17 @@ class Page extends Swoole\Controller
     //hello world
     function index()
     {
+        Swoole\Auth::loginRequire();
         // var_dump($this->php);
-        $this->http->header('Content-Type', 'text/html; charset=UTF-8');
-        $this->trace('Hello', 'World');
-        return $this->showTrace(true);
+        
     }
 
     function detail()
     {
-        var_dump($this->request->get);
+        $this->http->header('Content-Type', 'text/html; charset=UTF-8');
+        $this->trace('Hello', 'World');
+
+        return $this->showTrace(true);
     }
 
     //数据库测试
