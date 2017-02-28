@@ -106,6 +106,7 @@ class Controller extends Object
     function assign($key, $value)
     {
         $this->tpl_var[$key] = $value;
+        return $this;
     }
 
     /**

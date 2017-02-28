@@ -15,7 +15,7 @@ class Page extends Swoole\Controller
     function index()
     {
         Swoole\Auth::loginRequire();
-        // var_dump($this->php);
+        $this->assign('my_var',['sdf'=>[],'sdf3'=>3,3=>'sdf'])->display('view_test.tpl.php');
         
     }
 
