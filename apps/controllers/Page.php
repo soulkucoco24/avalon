@@ -14,9 +14,8 @@ class Page extends Swoole\Controller
     //hello world
     function index()
     {
-        Swoole\Auth::loginRequire();
-        $this->assign('my_var',['sdf'=>[],'sdf3'=>3,3=>'sdf'])->display('view_test.tpl.php');
-        
+        // Swoole\Auth::loginRequire();
+        $this->assign('data',['game_name'=>'阿瓦隆','players'=>[5,12,'5-12'],3=>'/room/1'])->display('index.tpl.php');
     }
 
     function detail()

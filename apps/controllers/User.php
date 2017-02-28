@@ -44,6 +44,13 @@ class User extends Swoole\Controller
     function logout()
     {
         $this->session->start();
-        $this->user->logout();
+        $isOk = $this->user->logout();
+        echo '已登出';
+    }
+
+
+    function getInfo()
+    {
+        $uid = $this->request->get('id','int');
     }
 }
