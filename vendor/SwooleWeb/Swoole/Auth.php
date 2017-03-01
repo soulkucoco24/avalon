@@ -229,6 +229,26 @@ class Auth
         return true;
     }
 
+
+    function register($params){
+        if (self::$password_hash == 'crypt')
+        {
+            throw new \Exception('todo crypt register');
+        }else{
+            $table = table($this->login_table, $this->login_db);
+            $check = $table->get(0,"account='{$params['username']}'");
+            print_r($check);
+            if(!empty($check)){
+                throw new \Exception('登录名重复');
+            }else{
+                $pwd_hash = self::makePasswordHash(trim($params['username']), $params['password']);
+                $table->put(["account"=>trim($params['username']),"real_name"=>$params['realname'],"nick_name"=>$params['nick_name'],"mobile"=>$params['mobile'],"pwd"=>$pwd_hash]);
+                return true;
+            }
+
+        }
+    }
+
     /**
      * 验证密码
      * @param $username

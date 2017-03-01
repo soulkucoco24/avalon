@@ -32,6 +32,23 @@ class User extends Swoole\Controller
         }
     }
 
+    //注册
+    function register()
+    {
+        if (!empty($_POST['username'])){
+            $result = $this->user->register($_POST);
+            if(!$result){
+                throw new \Exception('注册失败');
+            }
+            $this->http->redirect('/user/login');
+        }else{
+            $this->display('user/register.php');
+        }
+
+
+
+    }
+
     function home()
     {
         var_dump($_SESSION);

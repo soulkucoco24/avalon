@@ -68,6 +68,19 @@ class Record extends Observer implements \ArrayAccess
                     $this->_change = self::STATE_INSERT;
                 }
             }
+        }else{
+            //by shuai   $where  name=空 会报错
+            $obj = $this->db->query("select {$select} from {$this->table} where {$where}  limit 1");
+            if (!is_bool($obj))
+            {
+                $res = $obj->fetch();
+                if (!empty($res))
+                {
+                    $this->_original_data = $this->_data = $res;
+                    $this->_current_id = $this->_data[$this->primary];
+                    $this->_change = self::STATE_INSERT;
+                }
+            }
         }
     }
 
