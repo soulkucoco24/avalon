@@ -8,3 +8,4 @@
 *.DS_Store*
 *.pid
 /server/swoole.ini
+/apps/config/db.php

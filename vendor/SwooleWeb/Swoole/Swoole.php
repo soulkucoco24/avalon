@@ -2,7 +2,7 @@
 //加载核心的文件
 require_once __DIR__ . '/Loader.php';
 require_once __DIR__ . '/ModelLoader.php';
-
+date_default_timezone_set("Asia/Shanghai");
 use Swoole\Exception\NotFound;
 
 /**
@@ -484,7 +484,6 @@ class Swoole
         {
             $uri = $_SERVER['REQUEST_URI'];
         }
-
         $uri = trim($uri, '/');
         $mvc = array();
 
