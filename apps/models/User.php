@@ -8,7 +8,7 @@ class User extends Swoole\Model
      * 表名
      * @var string
      */
-    public $table = 'users';
+    public $table = 'user';
 
     function findFrist($id)
     {

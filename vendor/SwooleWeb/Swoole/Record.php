@@ -50,14 +50,9 @@ class Record extends Observer implements \ArrayAccess
         $this->table = $table;
         $this->primary = $primary;
 
-        if (empty($where))
-        {
-            $where = $primary;
-        }
-
-        if (!empty($this->_current_id))
-        {
-            $obj = $this->db->query("select {$select} from {$this->table} where {$where} ='{$id}' limit 1");
+        if(!empty($where)){
+            //by shuai   $where  name=空 会报错
+            $obj = $this->db->query("select {$select} from {$this->table} where {$where}  limit 1");
             if (!is_bool($obj))
             {
                 $res = $obj->fetch();
@@ -68,9 +63,14 @@ class Record extends Observer implements \ArrayAccess
                     $this->_change = self::STATE_INSERT;
                 }
             }
+            return;
         }else{
-            //by shuai   $where  name=空 会报错
-            $obj = $this->db->query("select {$select} from {$this->table} where {$where}  limit 1");
+            $where = $primary;
+        }
+
+        if (!empty($this->_current_id))
+        {
+            $obj = $this->db->query("select {$select} from {$this->table} where {$where} ='{$id}' limit 1");
             if (!is_bool($obj))
             {
                 $res = $obj->fetch();
@@ -145,6 +145,7 @@ class Record extends Observer implements \ArrayAccess
         }
         else
         {
+            print_r($this->_data);
             Error::pecho("Record object no property: $property");
             return null;
         }

@@ -137,7 +137,11 @@ class Auth
                 $_SESSION[self::$session_prefix . 'isLogin'] = true;
                 $_SESSION[self::$session_prefix . 'user_id'] = $this->user['id'];
                 $_SESSION[self::$session_prefix . 'nick_name'] = $this->user['nick_name'];
-                $_SESSION[self::$session_prefix . 'level'] = $this->user['level'];
+                $_SESSION[self::$session_prefix . 'mobile'] = $this->user['mobile'];
+                $_SESSION[self::$session_prefix . 'score'] = $this->user['score'];
+                $_SESSION[self::$session_prefix . 'win'] = $this->user['win'];
+                $_SESSION[self::$session_prefix . 'lose'] = $this->user['lose'];
+
                 return true;
             }
             else
@@ -235,17 +239,18 @@ class Auth
         {
             throw new \Exception('todo crypt register');
         }else{
-            $table = table($this->login_table, $this->login_db);
-            $check = $table->get(0,"account='{$params['username']}'");
-            print_r($check);
-            if(!empty($check)){
+            $model = Model('User');
+            $record = $model->get(0,"account='{$params['username']}'");
+            if(!empty($record->_current_id)){
                 throw new \Exception('登录名重复');
             }else{
                 $pwd_hash = self::makePasswordHash(trim($params['username']), $params['password']);
-                $table->put(["account"=>trim($params['username']),"real_name"=>$params['realname'],"nick_name"=>$params['nick_name'],"mobile"=>$params['mobile'],"pwd"=>$pwd_hash]);
+                $model->put(["account"=>trim($params['username']),"real_name"=>$params['realname'],"nick_name"=>$params['nick_name'],"mobile"=>$params['mobile'],"pwd"=>$pwd_hash]);
+//                $record = $model->get();
+//                $record->put(["account"=>trim($params['username']),"real_name"=>$params['realname'],"nick_name"=>$params['nick_name'],"mobile"=>$params['mobile'],"pwd"=>$pwd_hash]);
+//                $record->save();
                 return true;
             }
-
         }
     }
 
