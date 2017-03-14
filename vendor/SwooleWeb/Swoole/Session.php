@@ -155,6 +155,14 @@ class Session
         }
     }
 
+    public function get($str='')
+    {
+        if( !empty($str))
+            return $_SESSION[$str];
+        else
+            return $_SESSION;
+    }
+
     /**
      * 加载Session
      * @param $sessId

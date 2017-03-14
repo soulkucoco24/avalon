@@ -14,5 +14,5 @@ class User extends Swoole\Model
     {
         return ['name'=>'test'];
     }
-    
+
 }

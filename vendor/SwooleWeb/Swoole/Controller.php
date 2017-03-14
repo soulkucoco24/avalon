@@ -123,6 +123,10 @@ class Controller extends Object
         {
             $tpl_file = strtolower($this->swoole->env['mvc']['controller']).'/'.strtolower($this->swoole->env['mvc']['view']).'.php';
         }
+        if( strstr($tpl_file,'.') === FALSE) {
+            $tpl_file .= '.tpl.php';
+        }
+
         if (!is_file($this->template_dir.$tpl_file))
         {
             Error::info('template error', "template file[".$this->template_dir.$tpl_file."] not found");

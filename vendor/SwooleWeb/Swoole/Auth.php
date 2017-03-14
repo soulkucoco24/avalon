@@ -134,14 +134,7 @@ class Auth
             //验证密码是否正确
             if (self::verifyPassword($username, $password, $this->user[self::$password]))
             {
-                $_SESSION[self::$session_prefix . 'isLogin'] = true;
-                $_SESSION[self::$session_prefix . 'user_id'] = $this->user['id'];
-                $_SESSION[self::$session_prefix . 'nick_name'] = $this->user['nick_name'];
-                $_SESSION[self::$session_prefix . 'mobile'] = $this->user['mobile'];
-                $_SESSION[self::$session_prefix . 'score'] = $this->user['score'];
-                $_SESSION[self::$session_prefix . 'win'] = $this->user['win'];
-                $_SESSION[self::$session_prefix . 'lose'] = $this->user['lose'];
-
+                $this->refreshUsrSession();
                 return true;
             }
             else
@@ -150,6 +143,17 @@ class Auth
                 return false;
             }
         }
+    }
+
+    private function refreshUsrSession()
+    {
+        $_SESSION[self::$session_prefix . 'isLogin'] = true;
+        $_SESSION[self::$session_prefix . 'user_id'] = $this->user['id'];
+        $_SESSION[self::$session_prefix . 'nick_name'] = $this->user['nick_name'];
+        $_SESSION[self::$session_prefix . 'mobile'] = $this->user['mobile'];
+        $_SESSION[self::$session_prefix . 'score'] = $this->user['score'];
+        $_SESSION[self::$session_prefix . 'win'] = $this->user['win'];
+        $_SESSION[self::$session_prefix . 'lose'] = $this->user['lose'];
     }
 
     /**
@@ -352,6 +356,17 @@ class Auth
             return false;
         }
         return true;
+    }
+
+    public static function refreshUser()
+    {
+        $user = \Swoole::$php->user;
+        if( $user->isLogin())
+        {
+            $this->refreshUsrSession();
+            $this->user = $this->db->query("SELECT $this->select FROM user WHERE id=$user->id LIMIT 1")->fetch();
+        }
+
     }
 }
 

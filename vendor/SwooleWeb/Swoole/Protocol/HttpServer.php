@@ -505,8 +505,12 @@ class HttpServer extends Swoole\Protocol\WebServer implements  Swoole\IFace\Prot
     function processStatic(Swoole\Request $request, Swoole\Response $response)
     {
         $path = $this->document_root . '/' . $request->meta['path'];
-        if (is_file($path))
+        $path2 = $this->document_root.array_keys($this->static_dir)[0].$request->meta['path'];
+        if( is_file($path) || is_file($path2))
         {
+            if( !is_file($path))
+                $path = $path2;
+
             $read_file = true;
             if ($this->expire)
             {

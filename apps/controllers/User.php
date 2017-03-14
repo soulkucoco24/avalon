@@ -44,16 +44,15 @@ class User extends Swoole\Controller
         }else{
             $this->display('user/register.php');
         }
-
-
-
     }
 
     function home()
     {
-        var_dump($_SESSION);
         Swoole\Auth::loginRequire();
-        $this->showTrace();
+
+        // var_dump($this->user->getUserInfo());
+        // $this->showTrace();
+        $this->display('user/personal');
     }
 
     function logout()
