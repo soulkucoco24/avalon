@@ -31,8 +31,8 @@ function smarty_core_display_debug_console($params, &$smarty)
 	$_ldelim_orig = $smarty->left_delimiter;
 	$_rdelim_orig = $smarty->right_delimiter;
 
-	$smarty->left_delimiter = '{';
-	$smarty->right_delimiter = '}';
+	$smarty->left_delimiter = '{%';
+	$smarty->right_delimiter = '%}';
 
 	$_compile_id_orig = $smarty->_compile_id;
 	$smarty->_compile_id = null;

@@ -14,6 +14,8 @@ class Server extends Base implements Driver
     protected static $beforeStopCallback;
     protected static $beforeReloadCallback;
 
+    protected $uuid;
+
     static $swooleMode;
     static $useSwooleHttpServer = false;
     static $optionKit;

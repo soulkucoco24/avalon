@@ -102,7 +102,7 @@ class Swoole
     static $default_controller = array('controller' => 'page', 'view' => 'index');
 
     static $charset = 'utf-8';
-    static $debug = false;
+    static $debug = true;
 
     static $setting = array();
     public $error_call = array();

@@ -69,6 +69,7 @@ abstract class WebSocket extends HttpServer
          */
         $response->setHttpStatus(101);
         $response->addHeaders(array(
+            'fd' => $request->fd,
             'Upgrade' => 'websocket',
             'Connection' => 'Upgrade',
             'Sec-WebSocket-Accept' => base64_encode(sha1($key . static::GUID, true)),
@@ -151,7 +152,9 @@ abstract class WebSocket extends HttpServer
      * @return Swoole\Response
      */
     function onHttpRequest(Swoole\Request $request)
-    {
+    {        
+        $this->loadSetting(WEBPATH.'/server/swoole.ini');
+        return \Swoole::getInstance()->handlerServer($request);
         return parent::onRequest($request);
     }
 
@@ -208,7 +211,7 @@ abstract class WebSocket extends HttpServer
      */
     public function onReceive($server, $fd, $from_id, $data)
     {
-        //$this->log("Connection[{$fd}] received ".strlen($data)." bytes.");
+        // $this->log("Connection[{$fd}] received ".strlen($data)." bytes.");
         //未连接
         if (!isset($this->connections[$fd]))
         {

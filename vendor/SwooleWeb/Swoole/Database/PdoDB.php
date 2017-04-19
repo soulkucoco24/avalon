@@ -178,7 +178,7 @@ class PdoDB extends \PDO implements Swoole\IDatabase
 		unset($this);
 	}
 
-    function quote($str)
+    function quote($str, $paramtype = NULL /*暂时没用 为了不报错*/)
     {
         $safeStr = parent::quote($str);
         return substr($safeStr, 1, strlen($safeStr) - 2);

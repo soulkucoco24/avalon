@@ -137,3 +137,7 @@ function swoole_error_handler($errno, $errstr, $errfile, $errline)
     $info .= '<b>Code:</b> '.$errno."<br />\n";
     echo Swoole\Error::info($title, $info);
 }
+
+function swCallStack(){
+    var_dump(debug_backtrace(DEBUG_BACKTRACE_IGNORE_ARGS));
+}
