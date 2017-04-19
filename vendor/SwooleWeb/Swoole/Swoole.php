@@ -102,7 +102,7 @@ class Swoole
     static $default_controller = array('controller' => 'page', 'view' => 'index');
 
     static $charset = 'utf-8';
-    static $debug = true;
+    static $debug;
 
     static $setting = array();
     public $error_call = array();
@@ -574,7 +574,11 @@ class Swoole
         }
         catch (\Exception $e)
         {
-            $this->server->httpError(500, $response, $e->getMessage()."<hr />".nl2br($e->getTraceAsString()));
+            if( self::$debug) {
+                $msg = $e->getMessage()."<hr />".nl2br($e->getTraceAsString());
+            }else
+                $msg = $e->getMessage();
+            $this->server->httpError(500, $response, $msg);
         }
         
         //重定向

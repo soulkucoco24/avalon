@@ -153,7 +153,6 @@ abstract class WebSocket extends HttpServer
      */
     function onHttpRequest(Swoole\Request $request)
     {        
-        $this->loadSetting(WEBPATH.'/server/swoole.ini');
         return \Swoole::getInstance()->handlerServer($request);
         return parent::onRequest($request);
     }

@@ -212,7 +212,6 @@ class HttpServer extends Swoole\Protocol\WebServer implements  Swoole\IFace\Prot
      */
     function onReceive($serv, $client_id, $from_id, $data)
     {
-        // swCallStack();
         //检测request data完整性
         $ret = $this->checkData($client_id, $data);
         switch($ret)
@@ -271,8 +270,6 @@ class HttpServer extends Swoole\Protocol\WebServer implements  Swoole\IFace\Prot
 
     function afterResponse(Swoole\Request $request, Swoole\Response $response)
     {
-        // echo 'httpserver: '.getmypid();
-        //var_dump(debug_backtrace(DEBUG_BACKTRACE_IGNORE_ARGS));
         if (!$this->keepalive or $response->head['Connection'] == 'close')
         {
             $this->server->close($request->fd);
@@ -507,16 +504,13 @@ class HttpServer extends Swoole\Protocol\WebServer implements  Swoole\IFace\Prot
      */
     function processStatic(Swoole\Request $request, Swoole\Response $response)
     {
-        $path = $this->document_root . $request->meta['path'];
-        $path2 = $this->document_root.array_keys($this->static_dir)[0].$request->meta['path'];
-        var_dump($path);
-        var_dump($path2);
-        var_dump(is_file($path) || is_file($path2));
-        if( is_file($path) || is_file($path2))
+        $path = $this->document_root.array_keys($this->static_dir)[0].$request->meta['path'];
+        $path_ = $this->document_root.array_keys($this->static_dir)[1].$request->meta['path'];
+        if( !is_file($path))
+            $path = $path_;
+
+        if( is_file($path))
         {
-            if( !is_file($path))
-                $path = $path2;
-var_dump($path);
             $read_file = true;
             if ($this->expire)
             {

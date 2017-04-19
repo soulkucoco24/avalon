@@ -138,6 +138,6 @@ function swoole_error_handler($errno, $errstr, $errfile, $errline)
     echo Swoole\Error::info($title, $info);
 }
 
-function swCallStack(){
+function callStack(){
     var_dump(debug_backtrace(DEBUG_BACKTRACE_IGNORE_ARGS));
 }

@@ -26,7 +26,7 @@ class WebSocket extends Swoole\Protocol\WebSocket
 
     function router()
     {
-        var_dump($this->message);
+//        var_dump($this->message);
     }
 
     /**
@@ -54,7 +54,7 @@ class WebSocket extends Swoole\Protocol\WebSocket
 
         $this->message = $ws['message'];
         $response = Swoole::$php->runMVC();
-var_dump('respondse : '.var_export($response,true));
+//var_dump('respondse : '.var_export($response,true));
         $this->send($client_id, $response);
 
         //$this->broadcast($client_id, $ws['message']);
@@ -72,7 +72,7 @@ var_dump('respondse : '.var_export($response,true));
 
     function broadcast($client_id, $msg)
     {
-        echo "\n".var_export($this->connections,true)."\n";
+//        echo "\n".var_export($this->connections,true)."\n";
         foreach ($this->connections as $clid => $info)
         {
             if ($client_id != $clid)
@@ -85,6 +85,7 @@ var_dump('respondse : '.var_export($response,true));
 
 //require __DIR__'/phar://swoole.phar';
 Swoole\Config::$debug = true;
+\Swoole::$debug = true;
 Swoole\Error::$echo_html = false;
 
 $AppSvr = new WebSocket();
@@ -108,8 +109,8 @@ $server->run(array(
     'ssl_key_file' => __DIR__.'/ssl/ssl.key',
     'ssl_cert_file' => __DIR__.'/ssl/ssl.crt',
     'max_request' => 1000,
-    'log_file' => WEBPATH.'/storage/logs/swoole_websocket.log'
+    'log_file' => WEBPATH.'/storage/logs/swoole_websocket.log',
     //'ipc_mode' => 2,
-    // 'heartbeat_check_interval' => 40,
-    // 'heartbeat_idle_time' => 60,
+//     'heartbeat_check_interval' => 120,
+//     'heartbeat_idle_time' => 100,
 ));
