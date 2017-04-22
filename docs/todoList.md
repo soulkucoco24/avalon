@@ -10,7 +10,7 @@
 
 4 #数据库
 
-5 #Redis{ websocket握手鉴权  redis用法熟练}
+5 #Redis{ websocket握手鉴权&&连接池  redis用法熟练}
 
 6 #日志
 
