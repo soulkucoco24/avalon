@@ -357,16 +357,6 @@ class Auth
         }
         return true;
     }
-
-    public static function refreshUser()
-    {
-        $user = \Swoole::$php->user;
-        if( $user->isLogin())
-        {
-            $this->refreshUsrSession();
-            $this->user = $this->db->query("SELECT $this->select FROM user WHERE id=$user->id LIMIT 1")->fetch();
-        }
-
-    }
+    
 }
 

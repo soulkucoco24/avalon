@@ -40,6 +40,16 @@ abstract class WebSocket extends HttpServer
 	
 	public $keepalive = true;
 
+
+    /**
+     * 应用层协议
+     * 连接成功返回的状态码
+     */
+    const CON_STATUS_NEW = 101; // 首次连接
+    const CON_STATUS_RELOAD = 102; // 断线重练
+    const CON_STATUS_COVER = 103; // 覆盖连接
+
+
     /**
      * Do the handshake.
      *
@@ -61,6 +71,18 @@ abstract class WebSocket extends HttpServer
             $this->log('Header Sec-WebSocket-Key: $key is illegal.');
             return false;
         }
+
+        # 鉴权
+        $cc = explode(';',$request->header['Cookie']);
+        $cc = explode('=',$cc[0]);
+        session_id($cc[1]);
+
+        var_dump( \Swoole::$php->session->load($cc[1]));
+        return ;
+        $isOK = $this->loginRequire($request->header['Cookie'], $code);
+        if( !$isOk)
+            return false;
+
         /**
          * @TODO
          *   ? Origin;
@@ -69,6 +91,7 @@ abstract class WebSocket extends HttpServer
          */
         $response->setHttpStatus(101);
         $response->addHeaders(array(
+            'code' => $code,
             'fd' => $request->fd,
             'Upgrade' => 'websocket',
             'Connection' => 'Upgrade',
@@ -76,6 +99,22 @@ abstract class WebSocket extends HttpServer
             'Sec-WebSocket-Version' => self::WEBSOCKET_VERSION,
         ));
         return true;
+    }
+
+    function loginRequire($cookie, &$code='')
+    {
+        # 解码
+        $cookie = $cookie;
+
+        #cookie 是否已登录
+        $session = \Swoole::$php->redis->get('test');
+
+
+        #cookie是否已经握手了
+        //握手则恢复连接
+        //否则return true;
+
+        #todo 连接后返回状态码 首次连接,断线重连，覆盖连接 
     }
 
     function onConnect($serv, $fd, $from_id)

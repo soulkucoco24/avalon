@@ -38,6 +38,8 @@ class Controller extends Object
         if( !$this->session->isStart)
             $this->session->start();
         $this->tpl_var['user'] = $this->user->getUserInfo();
+
+        $this->http->header('Content-Type', 'text/html; charset=UTF-8');
     }
 
     /**
