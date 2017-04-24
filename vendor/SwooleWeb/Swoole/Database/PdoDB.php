@@ -51,8 +51,11 @@ class PdoDB extends \PDO implements Swoole\IDatabase
 	 * @param string $sql 执行的SQL语句
      * @return \PDOStatement
      */
-    public final function query($sql)
+    public final function query($sql,$type=1,$params=[])
     {
+        if($type == 2){
+            return $this->queryLine($sql,$params);
+        }
         if ($this->debug)
         {
             echo "$sql<br />\n<hr />";
@@ -85,7 +88,7 @@ class PdoDB extends \PDO implements Swoole\IDatabase
         }
         array_shift($params);
         $stm = $this->prepare($sql);
-        if ($stm->execute($params))
+        if ($stm->execute($params[0]))
         {
             $ret = $stm->fetch();
             $stm->closeCursor();
@@ -113,7 +116,7 @@ class PdoDB extends \PDO implements Swoole\IDatabase
         }
         array_shift($params);
         $stm = $this->prepare($sql);
-        if ($stm->execute($params))
+        if ($stm->execute($params[0]))
         {
             $ret = $stm->fetchAll();
             $stm->closeCursor();
