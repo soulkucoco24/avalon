@@ -197,7 +197,8 @@ class Database
         }
         $this->read_times += 1;
         $this->lastSql = $sql;
-        return $this->_db->queryLine($sql,$param);
+        $result =  $this->_db->queryLine($sql,$param);
+        return $result == array()?false:$result;
     }
 
 	/**
