@@ -79,7 +79,7 @@ class PdoDB extends \PDO implements Swoole\IDatabase
      * @param  mixed $_     [optional]
      * @return mixed
      */
-    public final function queryLine($sql, $_)
+    public final function queryLine($sql, $_,$type=2)
     {
         $params = func_get_args();
         if ($this->debug)
@@ -90,7 +90,12 @@ class PdoDB extends \PDO implements Swoole\IDatabase
         $stm = $this->prepare($sql);
         if ($stm->execute($params[0]))
         {
-            $ret = $stm->fetch();
+            if($type == 1){
+                $ret = $stm->fetch(\PDO::FETCH_OBJ);
+            }else{
+                $ret = $stm->fetch();
+            }
+
             $stm->closeCursor();
             return $ret;
         }
@@ -107,7 +112,7 @@ class PdoDB extends \PDO implements Swoole\IDatabase
      * @param  mixed $_     [optional]
      * @return mixed
      */
-    public final function queryAll($sql, $_)
+    public final function queryAll($sql, $_,$type=2)
     {
         $params = func_get_args();
         if ($this->debug)
@@ -118,7 +123,11 @@ class PdoDB extends \PDO implements Swoole\IDatabase
         $stm = $this->prepare($sql);
         if ($stm->execute($params[0]))
         {
-            $ret = $stm->fetchAll();
+            if($type == 1){
+                $ret = $stm->fetchAll(\PDO::FETCH_OBJ);
+            }else{
+                $ret = $stm->fetchAll();
+            }
             $stm->closeCursor();
             return $ret;
         }

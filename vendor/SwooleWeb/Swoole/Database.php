@@ -171,7 +171,7 @@ class Database
      * @param $sql
      * @return \Swoole\Database\MySQLiRecord
      */
-    public function fetchAll($sql,$param=[])
+    public function fetchAll($sql,$param=[],$type=2)
     {
         if ($this->debug)
         {
@@ -180,7 +180,7 @@ class Database
         }
         $this->read_times += 1;
         $this->lastSql = $sql;
-        return $this->_db->queryAll($sql,$param);
+        return $this->_db->queryAll($sql,$param,$type);
     }
 
     /**
@@ -188,7 +188,7 @@ class Database
      * @param $sql
      * @return \Swoole\Database\MySQLiRecord
      */
-    public function fetchOne($sql,$param=[])
+    public function fetchOne($sql,$param=[],$type=2)
     {
         if ($this->debug)
         {
@@ -197,8 +197,8 @@ class Database
         }
         $this->read_times += 1;
         $this->lastSql = $sql;
-        $result =  $this->_db->queryLine($sql,$param);
-        return $result == array()?false:$result;
+        $result =  $this->_db->queryLine($sql,$param,$type);
+        return empty($result)?false:$result;
     }
 
 	/**
