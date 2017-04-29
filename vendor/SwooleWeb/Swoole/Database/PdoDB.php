@@ -51,8 +51,11 @@ class PdoDB extends \PDO implements Swoole\IDatabase
 	 * @param string $sql 执行的SQL语句
      * @return \PDOStatement
      */
-    public final function query($sql)
+    public final function query($sql,$type=1,$params=[])
     {
+        if($type == 2){
+            return $this->queryLine($sql,$params);
+        }
         if ($this->debug)
         {
             echo "$sql<br />\n<hr />";
@@ -76,7 +79,7 @@ class PdoDB extends \PDO implements Swoole\IDatabase
      * @param  mixed $_     [optional]
      * @return mixed
      */
-    public final function queryLine($sql, $_)
+    public final function queryLine($sql, $_,$type=2)
     {
         $params = func_get_args();
         if ($this->debug)
@@ -85,9 +88,14 @@ class PdoDB extends \PDO implements Swoole\IDatabase
         }
         array_shift($params);
         $stm = $this->prepare($sql);
-        if ($stm->execute($params))
+        if ($stm->execute($params[0]))
         {
-            $ret = $stm->fetch();
+            if($type == 1){
+                $ret = $stm->fetch(\PDO::FETCH_OBJ);
+            }else{
+                $ret = $stm->fetch();
+            }
+
             $stm->closeCursor();
             return $ret;
         }
@@ -104,7 +112,7 @@ class PdoDB extends \PDO implements Swoole\IDatabase
      * @param  mixed $_     [optional]
      * @return mixed
      */
-    public final function queryAll($sql, $_)
+    public final function queryAll($sql, $_,$type=2)
     {
         $params = func_get_args();
         if ($this->debug)
@@ -113,9 +121,13 @@ class PdoDB extends \PDO implements Swoole\IDatabase
         }
         array_shift($params);
         $stm = $this->prepare($sql);
-        if ($stm->execute($params))
+        if ($stm->execute($params[0]))
         {
-            $ret = $stm->fetchAll();
+            if($type == 1){
+                $ret = $stm->fetchAll(\PDO::FETCH_OBJ);
+            }else{
+                $ret = $stm->fetchAll();
+            }
             $stm->closeCursor();
             return $ret;
         }

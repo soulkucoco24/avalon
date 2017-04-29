@@ -166,6 +166,41 @@ class Database
         return $this->_db->query($sql);
     }
 
+    /**
+     * 执行一条SQL语句
+     * @param $sql
+     * @return \Swoole\Database\MySQLiRecord
+     */
+    public function fetchAll($sql,$param=[],$type=2)
+    {
+        if ($this->debug)
+        {
+            echo "$sql<br />\n<hr />";
+            echo json_encode($param);
+        }
+        $this->read_times += 1;
+        $this->lastSql = $sql;
+        return $this->_db->queryAll($sql,$param,$type);
+    }
+
+    /**
+     * 执行一条SQL语句
+     * @param $sql
+     * @return \Swoole\Database\MySQLiRecord
+     */
+    public function fetchOne($sql,$param=[],$type=2)
+    {
+        if ($this->debug)
+        {
+            echo "$sql<br />\n<hr />";
+            echo json_encode($param);
+        }
+        $this->read_times += 1;
+        $this->lastSql = $sql;
+        $result =  $this->_db->queryLine($sql,$param,$type);
+        return empty($result)?false:$result;
+    }
+
 	/**
 	 * 插入$data数据库的表$table，$data必须是键值对应的，$key是数据库的字段，$value是对应的值
 	 * @param $data
