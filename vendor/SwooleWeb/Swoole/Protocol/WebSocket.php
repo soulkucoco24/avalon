@@ -73,13 +73,7 @@ abstract class WebSocket extends HttpServer
         }
 
         # 鉴权
-        $cc = explode(';',$request->header['Cookie']);
-        $cc = explode('=',$cc[0]);
-        session_id($cc[1]);
-
-        var_dump( \Swoole::$php->session->load($cc[1]));
-        return ;
-        $isOK = $this->loginRequire($request->header['Cookie'], $code);
+        $isOk = $this->loginRequire($request->header['Cookie'], $code);
         if( !$isOk)
             return false;
 
@@ -103,12 +97,39 @@ abstract class WebSocket extends HttpServer
 
     function loginRequire($cookie, &$code='')
     {
-        # 解码
-        $cookie = $cookie;
+        $code = 0;
 
-        #cookie 是否已登录
-        $session = \Swoole::$php->redis->get('test');
+        # cookie->session
+        $cc = strstr($cookie, 'PHPSESSID=');
+        $cc = strstr($cc, ';', true);
+        $cc = explode('=', $cc);
+        session_id($cc[1]);
+        $usrinfo =  \Swoole::$php->session->load($cc[1]);
 
+        # cookie verify
+        if( empty($usrinfo)) {
+            $code = 403;
+            return false;
+        }
+
+        if( $usrinfo['isLogin'] !== true) {
+            $code = 403;
+            return false;
+        }
+
+        if( empty($usrinfo['conn_status'])) {
+            # 更新session
+            $usrinfo['conn_status'] = 200;
+            \Swoole::$php->session->saveDirect($usrinfo);
+
+            $code = self::CON_STATUS_NEW;
+            return true;
+        }
+
+        if( $usrinfo['conn_status']) {
+            $code = self::CON_STATUS_RELOAD;
+            return true;
+        }
 
         #cookie是否已经握手了
         //握手则恢复连接

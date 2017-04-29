@@ -201,6 +201,14 @@ class Session
         $key = self::$cache_prefix . $this->sessID;
         return $this->cache->set($key, serialize($_SESSION), $this->session_lifetime);
     }
+
+
+function saveDirect( $param)
+{
+    $key = self::$cache_prefix . $this->sessID;
+    return $this->cache->set($key, serialize( $param), $this->session_lifetime);
+}
+
 }
 
 class SessionException extends \Exception
