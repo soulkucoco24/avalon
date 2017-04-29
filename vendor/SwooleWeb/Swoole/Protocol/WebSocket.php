@@ -74,8 +74,19 @@ abstract class WebSocket extends HttpServer
 
         # 鉴权
         $isOk = $this->loginRequire($request->header['Cookie'], $code);
-        if( !$isOk)
+        if( !$isOk) {
+            $response->setHttpStatus(403);
+            $response->addHeaders(array(
+                'code' => $code,
+                'fd' => 0,
+                'Upgrade' => 'websocket',
+                'Connection' => 'Upgrade',
+                'Sec-WebSocket-Accept' => '',
+                'Sec-WebSocket-Version' => '',
+            ));
+
             return false;
+        }
 
         /**
          * @TODO
