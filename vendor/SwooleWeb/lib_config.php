@@ -21,6 +21,7 @@ require_once __DIR__ . '/Swoole/Loader.php';
  * 注册顶层命名空间到自动载入器
  */
 Swoole\Loader::addNameSpace('Swoole', __DIR__.'/Swoole');
+Swoole\Loader::addNameSpace('Library', WEBPATH.'/library');
 spl_autoload_register('\\Swoole\\Loader::autoload');
 
 /**

@@ -21,6 +21,7 @@ class Controller extends Object
 
     function __construct(\Swoole $swoole)
     {
+        parent::__construct();
         $this->swoole = $swoole;
         $this->model = $swoole->model;
         $this->config = $swoole->config;

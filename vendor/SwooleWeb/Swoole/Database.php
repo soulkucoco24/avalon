@@ -177,6 +177,7 @@ class Database
         {
             echo "$sql<br />\n<hr />";
             echo json_encode($param);
+            # todo-1 数据库日志
         }
         $this->read_times += 1;
         $this->lastSql = $sql;
@@ -288,6 +289,7 @@ class Database
      */
     function __call($method, $args = array())
     {
+//        $this->db_log
         return call_user_func_array(array($this->_db, $method), $args);
     }
 }

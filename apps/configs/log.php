@@ -1,12 +1,17 @@
 <?php
 $log['master'] = array(
     'type' => 'FileLog',
-    'file' => WEBPATH . '/logs/app.log',
+    'file' => WEBPATH . '/storage/logs/avalon.log',
 );
 
 $log['test'] = array(
-    'type' => 'FileLog',
+    'type' => 'EchoLog',
     'file' => WEBPATH . '/logs/test.log',
+);
+
+$log['db'] = array(
+    'type' => 'FileLog',
+    'file' => WEBPATH . '/storage/logs/db.log',
 );
 
 return $log;
