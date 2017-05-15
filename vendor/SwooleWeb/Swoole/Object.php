@@ -19,6 +19,7 @@ use Library\Helper\RedisRoom;
  * @property Config              $config
  * @property Http\PWS            $http
  * @property Log                 $log
+ * @property Log                 $dblog
  * @property Auth                $user
  * @property URL                 $url
  * @property Limit               $limit

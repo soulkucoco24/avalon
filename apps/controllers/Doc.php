@@ -62,7 +62,8 @@ var_dump($this->redisRoom->roomInfo(1));
 
     function log()
     {
-        $this->log->info('sdfdsgdfg');
+        $this->dblog->info('sdfdsgdfg');
+        $this->log->info('sdfdsg111dfg');
 
     }
 

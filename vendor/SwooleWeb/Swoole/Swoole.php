@@ -23,6 +23,7 @@ use Swoole\Exception\NotFound;
  * @property \Swoole\Config      $config
  * @property \Swoole\Http\PWS    $http
  * @property \Swoole\Log         $log
+ * @property \Swoole\Log         $dblog
  * @property \Swoole\Auth        $user
  * @property \Swoole\URL         $url
  * @property \Swoole\Limit       $limit
