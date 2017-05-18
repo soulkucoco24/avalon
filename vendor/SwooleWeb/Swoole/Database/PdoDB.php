@@ -112,7 +112,7 @@ class PdoDB extends \PDO implements Swoole\IDatabase
      * @param  mixed $_     [optional]
      * @return mixed
      */
-    public final function queryAll($sql, $_,$type=2)
+    public final function &queryAll($sql, $_,$type=2)
     {
         $params = func_get_args();
         if ($this->debug)

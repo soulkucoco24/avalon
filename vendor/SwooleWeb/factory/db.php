@@ -13,6 +13,7 @@ if (!empty($config['use_proxy']))
 else
 {
     $db = new Swoole\Database($config);
+    $db->attach(new \App\Observer\DbExecute());
     $db->connect();
 }
 return $db;

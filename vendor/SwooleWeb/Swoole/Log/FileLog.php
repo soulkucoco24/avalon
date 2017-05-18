@@ -18,7 +18,7 @@ class FileLog extends \Swoole\Log implements \Swoole\IFace\Log
     protected $queue = array();
     //是否记录更详细的信息（目前记多了文件名、行号）
     protected $verbose = false;
-    protected $enable_cache = true;
+    protected $enable_cache = false;
     protected $date;
 
     function __construct($config)
@@ -93,7 +93,7 @@ class FileLog extends \Swoole\Log implements \Swoole\IFace\Log
 
         $now = new \DateTime('now');
         $date = $now->format('Ymd');
-        $log = $now->format(self::$date_format)."\t{$level_str}\t{$msg}";
+        $log = $now->format(self::$date_format). round(explode(' ',microtime())[0],3) ."\t{$level_str}\t{$msg}";
         if ($this->verbose)
         {
             $debug_info = debug_backtrace();

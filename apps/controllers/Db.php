@@ -13,6 +13,21 @@ class Db extends Swoole\Controller
         var_dump($res);
     }
 
+    function obtest()
+    {
+        try{
+            //        $res = $this->db->fetchAll("SELECT * FROM user WHERE nick_name LIKE ?",['%波%']);
+//        $res = $this->db->fetchOne("SELECT * FROM user WHERE nick_name LIKE ?",['%波%']);
+            $res = $this->db->insert(['account'=>'www1','real_name'=>'测试是','nick_name'=>'禅语','pwd'=>'3'],'user');
+            echo "</br>";
+            var_dump($res);
+            return \Swoole\Error::info('sdfsdfsdf','sdfsdf');
+        }catch (\Exception $e) {
+            var_dump($e->getMessage());
+        }
+
+    }
+
     function tables()
     {
         /**
@@ -31,7 +46,7 @@ class Db extends Swoole\Controller
     function put()
     {
         $model = Model('User');
-        $id = $model->put(array('name' => 'swoole', 'level' => 5, 'mobile' => '19999990000'));
+        $id = $model->put(['name' => 'swoole', 'level' => 5, 'mobile' => '19999990000']);
         echo "insert id = $id\n";
     }
 
@@ -39,12 +54,9 @@ class Db extends Swoole\Controller
     {
         $model = Model('User');
         $user = $model->get(1);
-        /**
-         * 打印数组
-         */
-        var_dump($user->get());
 
-        $user->attach(new \App\Observer\ModelUpdate());
+        # 增加观察者
+        $user->attach(new \App\Observer\DbExecute());
 
         /**
          * 修改mobile 为 13800008888

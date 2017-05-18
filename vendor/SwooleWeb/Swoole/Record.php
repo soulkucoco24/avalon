@@ -163,7 +163,7 @@ class Record extends Observer implements \ArrayAccess
         {
             $this->_data[$property] = $value;
         }
-        $this->_save = true;
+//        $this->_save = true;
     }
 
     /**

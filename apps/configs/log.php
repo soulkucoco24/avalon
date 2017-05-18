@@ -12,6 +12,7 @@ $log['test'] = array(
 $log['db'] = array(
     'type' => 'FileLog',
     'file' => WEBPATH . '/storage/logs/db.log',
+    'enable_cache' => false,
 );
 
 return $log;

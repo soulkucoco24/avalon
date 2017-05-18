@@ -6,6 +6,7 @@ namespace Swoole;
  * @package SwooleSystem
  * @subpackage database
  */
+use Swoole\Component\Observer;
 
 /**
  * Database Driver接口
@@ -44,7 +45,7 @@ interface IDbRecord
  * @method quote $str
  * @method errno
  */
-class Database
+class Database extends Observer
 {
 	public $debug = false;
 	public $read_times = 0;
@@ -60,6 +61,7 @@ class Database
     public $db_apt = null;
 
     protected $lastSql = '';
+    protected $lastSqlParam = [];
 
 	const TYPE_MYSQL   = 1;
 	const TYPE_MYSQLi  = 2;
@@ -162,8 +164,11 @@ class Database
             echo "$sql<br />\n<hr />";
         }
         $this->read_times += 1;
-        $this->lastSql = $sql;
-        return $this->_db->query($sql);
+
+        $ret = $this->_db->query($sql);
+        $this->updateLastSql($sql);
+
+        return $ret;
     }
 
     /**
@@ -177,11 +182,14 @@ class Database
         {
             echo "$sql<br />\n<hr />";
             echo json_encode($param);
-            # todo-1 数据库日志
         }
         $this->read_times += 1;
-        $this->lastSql = $sql;
-        return $this->_db->queryAll($sql,$param,$type);
+
+
+        $ret = &$this->_db->queryAll($sql,$param,$type);
+        $this->updateLastSql($sql, $param);
+
+        return $ret;
     }
 
     /**
@@ -197,8 +205,10 @@ class Database
             echo json_encode($param);
         }
         $this->read_times += 1;
-        $this->lastSql = $sql;
-        $result =  $this->_db->queryLine($sql,$param,$type);
+
+        $result = $this->_db->queryLine($sql,$param,$type);
+        $this->updateLastSql($sql, $param);
+
         return empty($result)?false:$result;
     }
 
@@ -213,6 +223,7 @@ class Database
         $this->db_apt->init();
         $this->db_apt->from($table);
         $this->write_times += 1;
+
         return $this->db_apt->insert($data);
     }
 
@@ -232,7 +243,11 @@ class Database
         $this->db_apt->init();
         $this->db_apt->from($table);
         $this->write_times += 1;
-        return $this->query("delete from $table where $where='$id'");
+
+        $ret = $this->query("delete from $table where $where='$id'");
+        $this->updateLastSql("delete from $table where $where='$id'");
+
+        return $ret;
     }
 
     /**
@@ -254,7 +269,11 @@ class Database
         $this->db_apt->from($table);
         $this->db_apt->where("$where='$id'");
         $this->write_times += 1;
-        return $this->db_apt->update($data);
+
+        $ret =  $this->db_apt->update($data);
+        $this->updateLastSql("更新$table: id:$id".var_export($data,true));
+
+        return $ret;
     }
 
 	/**
@@ -269,16 +288,29 @@ class Database
         $this->db_apt->init();
         $this->db_apt->from($table);
         $this->db_apt->where("$primary='$id'");
-        return $this->db_apt->getone();
+
+        $ret = $this->db_apt->getone();
+        $this->updateLastSql("get $table id:$id");
+
+        return $ret;
     }
 
     /**
      * 获取最近一次执行的SQL语句
      * @return string
      */
-    function getSql()
-    {
+    function getSql(){
         return $this->lastSql;
+    }
+
+    function getSqlParam(){
+        return $this->lastSqlParam;
+    }
+
+    private function updateLastSql($sql, $param=[]) {
+        $this->lastSql = $sql;
+        $this->lastSqlParam = $param;
+        $this->notify();
     }
 
     /**
@@ -287,9 +319,9 @@ class Database
      * @param array $args
      * @return mixed
      */
-    function __call($method, $args = array())
+    function __call($method, $args = [])
     {
 //        $this->db_log
-        return call_user_func_array(array($this->_db, $method), $args);
+        return call_user_func_array([$this->_db, $method], $args);
     }
 }
