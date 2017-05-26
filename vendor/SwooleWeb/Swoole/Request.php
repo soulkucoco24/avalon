@@ -320,4 +320,16 @@ class Request
 
         return $os;
     }
+
+    function has($key) {
+        if( isset($this->request[$key]))
+            return true;
+
+        return false;
+    }
+
+    function get($key) {
+        return $this->request[$key];
+    }
+
 }

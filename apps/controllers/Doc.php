@@ -53,6 +53,13 @@ class Doc extends Swoole\Controller
 var_dump($this->redisRoom->roomInfo(1));
     }
 
+    function object() {
+        $this->user->errCode++;
+        print_r($this->user);
+        var_dump(get_class_methods($this->user));
+
+    }
+
     function event()
     {
         echo "event trigger\n";
@@ -65,6 +72,10 @@ var_dump($this->redisRoom->roomInfo(1));
         $this->dblog->info('sdfdsgdfg');
         $this->log->info('sdfdsg111dfg');
 
+    }
+
+    function gamerule() {
+        echo '游戏规则';
     }
 
 }

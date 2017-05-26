@@ -112,7 +112,8 @@ class Controller extends Object
 
     function assign($key, $value)
     {
-        $this->tpl_var[$key] = $value;
+//        $this->tpl_var[$key] = $value;
+        $this->tpl->assign($key, $value);
         return $this;
     }
 
@@ -122,6 +123,8 @@ class Controller extends Object
      */
     function display($tpl_file ='')
     {
+        return $this->tpl->display($this->template_dir.$tpl_file);
+
         if (empty($tpl_file))
         {
             $tpl_file = strtolower($this->swoole->env['mvc']['controller']).'/'.strtolower($this->swoole->env['mvc']['view']).'.php';

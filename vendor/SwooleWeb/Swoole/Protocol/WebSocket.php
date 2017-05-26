@@ -106,16 +106,16 @@ abstract class WebSocket extends HttpServer
         return true;
     }
 
-    function loginRequire($cookie, &$code='')
+    private function loginRequire($cookie, &$code='')
     {
         $code = 0;
 
         # cookie->session
-        $cc = strstr($cookie, 'PHPSESSID=');
-        $cc = strstr($cc, ';', true);
-        $cc = explode('=', $cc);
-        session_id($cc[1]);
-        $usrinfo =  \Swoole::$php->session->load($cc[1]);
+        $cookie = strstr($cookie, 'PHPSESSID=');
+        $cookie = strstr($cookie, ';', true);
+        $cookie = explode('=', $cookie);
+        session_id($cookie[1]);
+        $usrinfo =  \Swoole::$php->session->load($cookie[1]);
 
         # cookie verify
         if( empty($usrinfo)) {
@@ -141,10 +141,6 @@ abstract class WebSocket extends HttpServer
             $code = self::CON_STATUS_RELOAD;
             return true;
         }
-
-        #cookie是否已经握手了
-        //握手则恢复连接
-        //否则return true;
 
         #todo 连接后返回状态码 首次连接,断线重连，覆盖连接 
     }

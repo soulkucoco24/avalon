@@ -21,8 +21,8 @@ class Template extends \Smarty
 		$this->compile_dir = WEBPATH."/cache/templates_c";
 		$this->config_dir = WEBPATH."/configs";
 		$this->cache_dir = WEBPATH."/cache/pagecache";
-		$this->left_delimiter = "{{";
-		$this->right_delimiter = "}}";
+		$this->left_delimiter = "{";
+		$this->right_delimiter = "}";
 	}
 
 	function __init()

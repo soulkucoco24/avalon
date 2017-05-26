@@ -162,7 +162,7 @@ class Auth
      */
     function isLogin()
     {
-        if (isset($_SESSION[self::$session_prefix . 'isLogin']) and $_SESSION[self::$session_prefix . 'isLogin'] == 1)
+        if (isset($_SESSION[self::$session_prefix . 'isLogin']) and $_SESSION[self::$session_prefix . 'isLogin'])
         {
             return true;
         }
@@ -209,6 +209,8 @@ class Auth
      */
     function logout()
     {
+        $this->is_login = false;
+
         /**
          * 启动Session
          */

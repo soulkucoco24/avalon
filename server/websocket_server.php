@@ -100,7 +100,7 @@ $AppSvr->setDocumentRoot(WEBPATH);
  * EventTCP 使用libevent，需要安装libevent扩展
  */
 $enable_ssl = false;
-$server = Swoole\Network\Server::autoCreate('127.0.0.1', 8089, $enable_ssl);
+$server = Swoole\Network\Server::autoCreate($AppSvr->config['server']['host'], $AppSvr->config['server']['port'], $enable_ssl);
 $server->setProtocol($AppSvr);
 
 //$server->daemonize(); //作为守护进程

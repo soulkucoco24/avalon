@@ -7,28 +7,29 @@ class User extends Swoole\Controller
     function login()
     {
         //已经登录了，跳转到
-        if ($this->user->isLogin())
-        {
+        if( $this->user->isLogin()) {
             $this->http->redirect('/user/home/');
             return;
         }
-        if (!empty($_POST['password']))
+
+        if( $this->request->has('password') && $this->request->has('username'))
         {
-            $r = $this->user->login(trim($_POST['username']), $_POST['password']);
-            if($r)
-            {
+            $isOk = $this->user->login(trim($_POST['username']), $_POST['password']);
+            if($isOk) {
                 // cache 记录
-                $this->http->redirect('/user/home/');
+                $refer = $this->request->get('refer');
+
+                empty($refer) && $refer='/user/home';
+
+                $this->http->redirect($refer);
                 return;
-            }
-            else
-            {
+            }else
                 echo "登录失败";
-            }
+
         }
         else
         {
-            $this->display('user/login.php');
+            $this->display('user/login.tpl');
         }
     }
 
@@ -52,7 +53,7 @@ class User extends Swoole\Controller
 
         // var_dump($this->user->getUserInfo());
         // $this->showTrace();
-        $this->display('user/personal');
+        $this->display('user/personal.tpl');
     }
 
     function logout()

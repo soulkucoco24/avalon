@@ -1,3 +1,5 @@
+{include file="widget/nav.tpl"}
+
 <head>个人中心</head>
 
 <h2>用户信息</h2>

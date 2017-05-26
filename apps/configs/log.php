@@ -2,6 +2,7 @@
 $log['master'] = array(
     'type' => 'FileLog',
     'file' => WEBPATH . '/storage/logs/avalon.log',
+    'enable_cache' => false,
 );
 
 $log['test'] = array(

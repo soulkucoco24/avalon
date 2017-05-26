@@ -2,7 +2,6 @@
 
 namespace Library\Helper;
 
-//use Library\Helper\TreeHelper;
 use Swoole\Object;
 
 /**
@@ -67,17 +66,47 @@ class RedisRoom
 
     /**
      * 功能: 获取房间信息
-     * @param $num
+     * @param $num 房间id
      * @return array
      */
-    function roomInfo($num)
+    function roomInfo($num=null)
     {
-        $info = $this->redis->hGetAll(self::PREFIX.$num);
-        return $info;
+        $rooms = [];
+        if( empty($num)) {
+            $keys = $this->redis->keys(self::PREFIX);
+            foreach($keys as $k) {
+                $rooms[] = $this->redis->hGetAll(self::PREFIX.$k);
+            }
+        }else {
+            $rooms[] = $this->redis->hGetAll(self::PREFIX.$num);
+        }
+
+        if( empty($info)) {
+            $rooms = \Swoole::$php->db->fetchAll("SELECT * FROM room");
+            foreach($rooms as $v) {
+                $this->redis->hMset(self::PREFIX.$v['id'], $v);
+            }
+        }
+
+        return $rooms;
     }
 
     function alterRoomInfo($num, $info)
     {
+
+    }
+
+    function userInfo($param) {
+        if( is_numeric($param)) {
+            # cookie->session
+            $cookie = strstr($param, 'PHPSESSID=');
+            $cookie = strstr($cookie, ';', true);
+            $cookie = explode('=', $cookie);
+            session_id($cookie[1]);
+            return \Swoole::$php->session->load($cookie[1]);
+        }else {
+
+        }
 
     }
 

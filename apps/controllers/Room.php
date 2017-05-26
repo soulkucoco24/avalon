@@ -13,6 +13,17 @@ class Room extends Swoole\Controller
 
     function index()
     {
+        $room = $this->redisRoom->roomInfo();
+        return $this->assign('data',$room)->display('room/index.tpl');
+    }
+
+    function hunter()
+    {
+        return $this->assign('data',['room_id'=>1,'game_type'=>'langren'])->display('room/main.tpl');
+    }
+
+    function saber()
+    {
         return $this->assign('data',['room_id'=>1,'game_type'=>'langren'])->display('room/main.tpl');
     }
 
