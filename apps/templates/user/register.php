@@ -5,10 +5,9 @@
 <!-- * Time: 下午5:29-->
 <!-- */-->
 
-<html>
+{include file="widget/nav.tpl"}
 
-<body>
-<form method="post">
+<form method="post" class="form-group">
 	<div>
     	*<label> 用户名(登录用名)：<input type="text" name="username"/></label></br>
     	*<label> 密码：<input type="password" name="password"/></label></br>
@@ -21,5 +20,3 @@
     <input type="submit"/>
 </form>
 
-</body>
-</html>
