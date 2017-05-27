@@ -4,3 +4,23 @@
 <script type="text/javascript"  src="http://cdn.static.runoob.com/libs/bootstrap/3.3.7/js/bootstrap.min.js"> </script>
 
 <title>Shiki</title>
+
+{*todo变色导航写的这么艰辛*}
+{literal}
+    <script type="text/javascript">
+        var _HOST = 'shikii.cc';
+        var _WEB_HOST = 'www.shikii.cc';
+        if( window.location.host.indexOf('shikii') == -1) {
+            _HOST = 'xdd.cn';
+            _WEB_HOST = 'www.xdd.cn';
+        }
+
+
+        //    function(){
+//        $('#dropdown-menu li').click(function(){
+//            alert('sdfsdf');
+//            this.addClass("active").siblings().removeClass("active");
+//        });
+        //    };
+    </script>
+{/literal}
