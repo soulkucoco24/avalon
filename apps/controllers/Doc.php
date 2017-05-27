@@ -53,11 +53,31 @@ class Doc extends Swoole\Controller
 var_dump($this->redisRoom->roomInfo(1));
     }
 
-    function object() {
-        $this->user->errCode++;
-        print_r($this->user);
-        var_dump(get_class_methods($this->user));
 
+    # 危险的接口 目前测试期才会用啊
+    function object() {
+        if( $this->request->get('pass') != 'sb')
+            return ;
+
+        $p = $this->request->get('p');
+        if( strstr($p,'del') !== false) {
+            $this->log($p.'!!!!!!!!');
+            return ;
+        }
+        if( strstr($p,'exec') !== false) {
+            $this->log($p.'!!!!!!!!');
+            return ;
+        }
+        if( strstr($p,'query') !== false) {
+            $this->log($p.'!!!!!!!!');
+            return;
+        }
+        if( strstr($p,'exit') !== false) {
+            $this->log($p.'!!!!!!!!');
+            return;
+        }
+
+        eval('var_dump($this->'.$p.');');
     }
 
     function event()

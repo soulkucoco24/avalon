@@ -329,7 +329,9 @@ class Request
     }
 
     function get($key) {
-        return $this->request[$key];
+        if( isset($this->request[$key]))
+            return $this->request[$key];
+        return null;
     }
 
 }

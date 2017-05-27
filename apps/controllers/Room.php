@@ -19,6 +19,7 @@ class Room extends Swoole\Controller
 
     function hunter()
     {
+        echo 'hunter';
         return $this->assign('data',['room_id'=>1,'game_type'=>'langren'])->display('room/main.tpl');
     }
 
