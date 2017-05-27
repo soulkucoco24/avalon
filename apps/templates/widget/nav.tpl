@@ -3,7 +3,7 @@
 <ul class="nav nav-pills nav-justified">
     <li class="dropdown">
         <a class="dropdown-toggle" data-toggle="dropdown">
-            我 <span class="caret"></span>
+        tokyo时区测试:{php}echo date('Y-m-d H:i:s');{/php} &nbsp;&nbsp;&nbsp;我 <span class="caret"></span>
         </a>
         <ul class="dropdown-menu">
             <li><a href="/user/home">个人中心</a></li>
