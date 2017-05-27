@@ -104,12 +104,14 @@ $server = Swoole\Network\Server::autoCreate($AppSvr->config['server']['host'], $
 $server->setProtocol($AppSvr);
 
 //$server->daemonize(); //作为守护进程
+
+$date = date('ymd');
 $server->run(array(
-    'worker_num' => 3,
+    'worker_num' => $AppSvr->config['server']['worker_num'],
     // 'ssl_key_file' => __DIR__.'/ssl/ssl.key',
     // 'ssl_cert_file' => __DIR__.'/ssl/ssl.crt',
-    'max_request' => 1000,
-    'log_file' => WEBPATH.'/storage/logs/swoole_websocket.log',
+    'max_request' => $AppSvr->config['server']['max_request'],
+    'log_file' => WEBPATH."/storage/logs/web_$date.log",
     //'ipc_mode' => 2,
     'heartbeat_check_interval' => 150,
     'heartbeat_idle_time' => 550,

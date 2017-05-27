@@ -1,10 +1,10 @@
 {include file="widget/nav.tpl"}
 
-
 <div class="container">
     <div class="jumbotron">
-        <h1>标题</h1>
-        <p>详细</p>
+        <h1>阿瓦隆    狼人杀</h1>
+        <p>This is a good game  It includes  ...</p>
+        <a class="btn btn-primary btn-large" href="/doc/gamerule">Learn more</a>
     </div>
     <div class="row">
         {foreach from=$data item='item'}

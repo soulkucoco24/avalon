@@ -2,7 +2,9 @@
 $log['master'] = array(
     'type' => 'FileLog',
     'file' => WEBPATH . '/storage/logs/avalon.log',
+    'dir_prefix' => WEBPATH . '/storage/logs/log_',
     'enable_cache' => false,
+    'date' => true,
 );
 
 $log['test'] = array(
@@ -13,7 +15,9 @@ $log['test'] = array(
 $log['db'] = array(
     'type' => 'FileLog',
     'file' => WEBPATH . '/storage/logs/db.log',
+    'dir_prefix' => WEBPATH . '/storage/logs/db_',
     'enable_cache' => false,
+    'date' => true,
 );
 
 return $log;

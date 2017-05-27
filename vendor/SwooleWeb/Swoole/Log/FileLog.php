@@ -40,15 +40,15 @@ class FileLog extends \Swoole\Log implements \Swoole\IFace\Log
         //按日期存储日志
         if ($this->archive)
         {
-            if (isset($config['dir']))
+            if (isset($config['dir_prefix']))
             {
                 $this->date = date('Ymd');
-                $this->log_dir = rtrim($config['dir'], '/');
-                $this->log_file = $this->log_dir.'/'.$this->date.'.log';
+                $this->log_dir = $config['dir_prefix'];
+                $this->log_file = $this->log_dir.$this->date.'.log';
             }
             else
             {
-                throw new \Exception(__CLASS__.": require \$config['dir']");
+                throw new \Exception(__CLASS__.": require \$config['dir_prefix']");
             }
         }
         else
@@ -93,7 +93,9 @@ class FileLog extends \Swoole\Log implements \Swoole\IFace\Log
 
         $now = new \DateTime('now');
         $date = $now->format('Ymd');
-        $log = $now->format(self::$date_format). round(explode(' ',microtime())[0],3) ."\t{$level_str}\t{$msg}";
+        $ip = \Swoole::$php->request->getClientIP();
+
+        $log = $now->format(self::$date_format). round(explode(' ',microtime())[0],3) ." $ip"."\t{$level_str}\t{$msg}";
         if ($this->verbose)
         {
             $debug_info = debug_backtrace();
@@ -156,7 +158,7 @@ class FileLog extends \Swoole\Log implements \Swoole\IFace\Log
             {
                 fclose($this->fp);
                 $this->date = $date;
-                $this->log_file = $this->log_dir.'/'.$this->date.'.log';
+                $this->log_file = $this->log_dir.$this->date.'.log';
                 $this->fp = $this->openFile($this->log_file);
             }
 
@@ -165,7 +167,7 @@ class FileLog extends \Swoole\Log implements \Swoole\IFace\Log
             {
                 if ($this->archive)
                 {
-                    $new_log_file = $this->log_dir.'/'.$this->date.'.log.'.date('His');
+                    $new_log_file = $this->log_dir.$this->date.'.log.'.date('His');
                 }
                 else
                 {

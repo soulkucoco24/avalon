@@ -74,8 +74,12 @@ var_dump($this->redisRoom->roomInfo(1));
 
     }
 
+    function ss() {
+        return $this->assign('data','ShadowSocks还没弄......')->display('/static.tpl');
+    }
+
     function gamerule() {
-        echo '游戏规则';
+        return $this->assign('data','游戏规则......')->display('/static.tpl');
     }
 
 }

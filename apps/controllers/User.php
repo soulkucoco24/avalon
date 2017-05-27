@@ -53,14 +53,15 @@ class User extends Swoole\Controller
 
         // var_dump($this->user->getUserInfo());
         // $this->showTrace();
-        $this->display('user/personal.tpl');
+        $this->assign('user',$this->user->getUserInfo())->display('user/personal.tpl');
     }
 
     function logout()
     {
-        $this->is_ajax = true;
+//        $this->is_ajax = true;
+        echo '已登出';
         $isOk = $this->user->logout();
-        return ['msg'=>'已登出','err_code'=>0];
+        return $this->http->redirect('/');
     }
 
 

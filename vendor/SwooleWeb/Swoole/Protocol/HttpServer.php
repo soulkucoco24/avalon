@@ -457,11 +457,12 @@ class HttpServer extends Swoole\Protocol\WebServer implements  Swoole\IFace\Prot
 
         if ($this->doStaticRequest($request, $response))
         {
-             //pass
+             $this->log('static');
         }
         /* 动态脚本 */
         elseif (isset($this->dynamic_ext[$request->ext_name]) or empty($ext_name))
         {
+            $this->log('dynamic');
             $this->processDynamic($request, $response);
         }
         else

@@ -1,9 +1,16 @@
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
+{include file="widget/head.tpl"}
 
-<link rel="stylesheet" href="http://cdn.static.runoob.com/libs/bootstrap/3.3.7/css/bootstrap.min.css">
-<script type="text/javascript"  src="http://cdn.static.runoob.com/libs/jquery/2.1.1/jquery.min.js"> </script>
-<script type="text/javascript"  src="http://cdn.static.runoob.com/libs/bootstrap/3.3.7/js/bootstrap.min.js"> </script>
-
+{*todo变色导航写的这么艰辛*}
+{literal}
+    <script type="text/javascript">
+//    function(){
+        $('#dropdown-menu li').click(function(){
+            alert('sdfsdf');
+        this.addClass("active").siblings().removeClass("active");
+        });
+//    };
+</script>
+{/literal}
 
 <ul class="nav nav-pills nav-justified">
     <li class="dropdown">
@@ -21,7 +28,9 @@
 </ul>
 
 <ul class="nav nav-pills nav-justified">
-    <li class="active"><a href="/room/index">房间</a></li>
-    <li><a href="/doc/gamerule">规则</a></li>
-    <li><a href="http://shikii.cc">博客</a></li>
+    <li><a href="/">首页</a></li>
+    <li {*class="active">*}><a href="/room/index">桌游</a></li>
+    <li><a href="/doc/ss">SS服务</a></li>
+    {*todo跳转写的这么艰辛*}
+    <li><a href=javascript:window.location.href=window.location.host.replace('www','http://garden') >空间站</a></li>
 </ul><br><br><br>
