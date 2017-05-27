@@ -1,6 +1,4 @@
-var wsServer = 'ws://shikii.cc';
-if( window.location.host='www.xdd.cn')
-    wsServer = 'ws://127.0.0.1:8088';
+var wsServer = 'ws://'+_HOST;
 
 var websocket = new WebSocket(wsServer);
 websocket.onopen = function (evt) {
