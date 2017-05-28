@@ -20,5 +20,5 @@
     <li {*class="active">*}><a href="/room/index">桌游</a></li>
     <li><a href="/doc/ss">SS服务</a></li>
     {*todo跳转写的这么艰辛*}
-    <li><a href=javascript:window.location.href='http://garden.'+_HOST >空间站</a></li>
+    <li><a href=javascript:window.location.href='http://'+_HOST >空间站</a></li>
 </ul><br><br><br>

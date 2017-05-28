@@ -111,7 +111,7 @@ $server->run(array(
     // 'ssl_key_file' => __DIR__.'/ssl/ssl.key',
     // 'ssl_cert_file' => __DIR__.'/ssl/ssl.crt',
     'max_request' => $AppSvr->config['server']['max_request'],
-    'log_file' => WEBPATH."/storage/logs/web_$date.log",
+    'log_file' => WEBPATH."/storage/logs/srv_$date.log",
     //'ipc_mode' => 2,
     'heartbeat_check_interval' => 150,
     'heartbeat_idle_time' => 550,

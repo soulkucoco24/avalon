@@ -1,6 +1,12 @@
 # TODO 列表
 
 
+# SWOOLE 的坑
+1 网站无限die exit错误
+2 garden.shikii.cc 二级域名和cache304空白问题
+3 smarty的坑.
+
+
 ## 技术
 1 SWOOLE服务器  (可用)
 

@@ -7,6 +7,6 @@ class ModelUpdate implements \SplObserver
 {
     function update(\SplSubject $o)
     {
-        var_dump($o->get());exit;
+        var_dump($o->get());
     }
 }

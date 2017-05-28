@@ -81,7 +81,6 @@ class Db extends Swoole\Controller
         //仅获取数据
         var_dump($model->gets($gets));
         echo ($this->db->getSql());
-        exit;
 
         //分页
         $gets['page'] = empty($_GET['page'])?1:intval($_GET['page']);
