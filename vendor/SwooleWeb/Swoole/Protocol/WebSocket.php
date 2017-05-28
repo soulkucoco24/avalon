@@ -291,62 +291,77 @@ abstract class WebSocket extends HttpServer
      */
     public function onReceive($server, $fd, $from_id, $data)
     {
-        // $this->log("Connection[{$fd}] received ".strlen($data)." bytes.");
-        //未连接
-        if (!isset($this->connections[$fd]))
-        {
-            return parent::onReceive($server, $fd, $from_id, $data);
-        }
-
-        while (strlen($data) > 0 and isset($this->connections[$fd]))
-        {
-            //新的请求
-            if (!isset($this->frame_list[$fd]))
+        try{
+            // $this->log("Connection[{$fd}] received ".strlen($data)." bytes.");
+            //未连接
+            if (!isset($this->connections[$fd]))
             {
-                $frame = $this->parseFrame($data);
-                if ($frame === false)
+                return parent::onReceive($server, $fd, $from_id, $data);
+            }
+
+            while (strlen($data) > 0 and isset($this->connections[$fd]))
+            {
+                //新的请求
+                if (!isset($this->frame_list[$fd]))
                 {
-                    $this->log("Error Frame");
-                    $this->close($fd);
-                    break;
+                    $frame = $this->parseFrame($data);
+                    if ($frame === false)
+                    {
+                        $this->log("Error Frame");
+                        $this->close($fd);
+                        break;
+                    }
+                    //数据完整
+                    if ($frame['finish'])
+                    {
+                        $this->log("NewFrame finish. Opcode=".$frame['opcode']."|Length={$frame['length']}");
+                        $this->opcodeSwitch($fd, $frame);
+                    }
+                    //数据不完整加入到缓存中
+                    else
+                    {
+                        $this->frame_list[$fd] = $frame;
+                    }
                 }
-                //数据完整
-                if ($frame['finish'])
-                {
-                    $this->log("NewFrame finish. Opcode=".$frame['opcode']."|Length={$frame['length']}");
-                    $this->opcodeSwitch($fd, $frame);
-                }
-                //数据不完整加入到缓存中
                 else
                 {
-                    $this->frame_list[$fd] = $frame;
+                    $frame = &$this->frame_list[$fd];
+                    $frame['data'] .= $data;
+
+                    //$this->log("wait length = ".$ws['length'].'. data_length='.strlen($ws['data']));
+
+                    //数据已完整，进行处理
+                    if (strlen($frame['data']) >= $frame['length'])
+                    {
+                        $frame['fin'] = 1;
+                        $frame['finish'] = true;
+                        $frame['data'] = substr($frame['data'], 0, $frame['length']);
+                        $frame['message'] = $this->parseMessage($frame);
+                        $this->opcodeSwitch($fd, $frame);
+                        $data = substr($frame['data'], $frame['length']);
+                    }
+                    //数据不足，跳出循环，继续等待数据
+                    else
+                    {
+                        break;
+                    }
                 }
             }
-            else
+            return true;
+        }catch (\Exception $e) {
+            $errorMsg = "{$e->getMessage()} ({$e->getFile()}:{$e->getLine()})";
+            $message = Swoole\Error::info(self::SOFTWARE." Application Error", $errorMsg);
+            if (empty($this->currentResponse))
             {
-                $frame = &$this->frame_list[$fd];
-                $frame['data'] .= $data;
-
-                //$this->log("wait length = ".$ws['length'].'. data_length='.strlen($ws['data']));
-
-                //数据已完整，进行处理
-                if (strlen($frame['data']) >= $frame['length'])
-                {
-                    $frame['fin'] = 1;
-                    $frame['finish'] = true;
-                    $frame['data'] = substr($frame['data'], 0, $frame['length']);
-                    $frame['message'] = $this->parseMessage($frame);
-                    $this->opcodeSwitch($fd, $frame);
-                    $data = substr($frame['data'], $frame['length']);
-                }
-                //数据不足，跳出循环，继续等待数据
-                else
-                {
-                    break;
-                }
+                $this->currentResponse = new Swoole\Response();
             }
+            $this->currentResponse->setHttpStatus(500);
+            $this->currentResponse->body = $message;
+            $this->currentResponse->body = (defined('DEBUG') && DEBUG == 'on') ? $message : '';
+            $this->response($this->currentRequest, $this->currentResponse);
         }
-        return true;
+        return $this->currentResponse;
+
     }
 
     /**
