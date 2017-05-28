@@ -219,8 +219,22 @@ abstract class WebSocket extends HttpServer
      * @return Swoole\Response
      */
     function onHttpRequest(Swoole\Request $request)
-    {        
-        return \Swoole::getInstance()->handlerServer($request);
+    {
+        try{
+            return \Swoole::getInstance()->handlerServer($request);
+        }catch (\Exception $e) {
+            $errorMsg = "{$e->getMessage()} ({$e->getFile()}:{$e->getLine()})";
+            $message = Swoole\Error::info(self::SOFTWARE." Application Error", $errorMsg);
+            if (empty($this->currentResponse))
+            {
+                $this->currentResponse = new Swoole\Response();
+            }
+            $this->currentResponse->setHttpStatus(500);
+            $this->currentResponse->body = $message;
+            $this->currentResponse->body = (defined('DEBUG') && DEBUG == 'on') ? $message : '';
+            $this->response($this->currentRequest, $this->currentResponse);
+        }
+        return $this->currentResponse;
         return parent::onRequest($request);
     }
 
