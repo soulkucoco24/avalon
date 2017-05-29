@@ -7,5 +7,6 @@
 *.xml*
 *.DS_Store*
 *.pid
+lsss
 server/swoole.ini
 apps/configs/db.php

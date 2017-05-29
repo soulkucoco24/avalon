@@ -154,6 +154,7 @@ class Auth
         $_SESSION[self::$session_prefix . 'score'] = $this->user['score'];
         $_SESSION[self::$session_prefix . 'win'] = $this->user['win'];
         $_SESSION[self::$session_prefix . 'lose'] = $this->user['lose'];
+        \Swoole::$php->session->save();
     }
 
     /**

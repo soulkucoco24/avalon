@@ -292,7 +292,7 @@ abstract class WebSocket extends HttpServer
     public function onReceive($server, $fd, $from_id, $data)
     {
         try{
-            // $this->log("Connection[{$fd}] received ".strlen($data)." bytes.");
+            $this->log("Connection[{$fd}] ");
             //未连接
             if (!isset($this->connections[$fd]))
             {

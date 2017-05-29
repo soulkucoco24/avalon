@@ -4,7 +4,7 @@ $redis['master'] = array(
     'port'    => 6379,
     'password' => '',
     'timeout' => 0.25,
-    'pconnect' => false,
+    'pconnect' => true,
 //    'database' => 1,
 );
 return $redis;
