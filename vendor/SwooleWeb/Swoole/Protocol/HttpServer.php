@@ -525,6 +525,7 @@ class HttpServer extends Swoole\Protocol\WebServer implements  Swoole\IFace\Prot
                     {
                         //不需要读文件了
                         $read_file = false;
+                        $this->log->warn(' 304TEST: '.$path);
                         $response->setHttpStatus(304);
                     }
                 }

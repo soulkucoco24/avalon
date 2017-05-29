@@ -93,7 +93,9 @@ class FileLog extends \Swoole\Log implements \Swoole\IFace\Log
 
         $now = new \DateTime('now');
         $date = $now->format('Ymd');
-        $ip = \Swoole::$php->request->getClientIP();
+
+        if( isset(\Swoole::$php->request))
+            $ip = \Swoole::$php->request->getClientIP();
 
         $log = $now->format(self::$date_format). round(explode(' ',microtime())[0],3) ." $ip"."\t{$level_str}\t{$msg}";
         if ($this->verbose)
