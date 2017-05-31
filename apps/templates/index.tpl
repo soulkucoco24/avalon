@@ -1,10 +1,10 @@
 {include file="widget/nav.tpl"}
 
-<script src="https://cdnjs.cloudflare.com/ajax/libs/numeric/1.2.6/numeric.js"></script>
-<script src="/plugin/black-hole.js"></script>
-<script>
-    BlackHole.blackHoleifyImage('canvas_placeholder', 'http://7xn4jv.com1.z0.glb.clouddn.com/yinhe.jpg')
-</script>
+{*<script src="https://cdnjs.cloudflare.com/ajax/libs/numeric/1.2.6/numeric.js"></script>*}
+{*<script src="/plugin/black-hole.js"></script>*}
+{*<script>*}
+    {*BlackHole.blackHoleifyImage('canvas_placeholder', 'http://7xn4jv.com1.z0.glb.clouddn.com/yinhe.jpg')*}
+{*</script>*}
 
 {*<div>*}
     {*<head>头部</head>*}
@@ -24,18 +24,18 @@
         <ol class="carousel-indicators">
             <li class="" data-slide-to="0" data-target="#carousel-52109"></li>
             <li data-slide-to="1" data-target="#carousel-52109" class="active"></li>
-            <li data-slide-to="2" data-target="#carousel-52109" class=""></li>
+            {*<li data-slide-to="2" data-target="#carousel-52109" class=""></li>*}
         </ol>
         <div class="carousel-inner">
-            <div class="item">
-                <img alt="">
-                <div class="carousel-caption" id="canvas_placeholder">
-                    <h4>First Thumbnail label</h4>
-                    <p>
+            {*<div class="item">*}
+                {*<img alt="">*}
+                {*<div class="carousel-caption" id="canvas_placeholder">*}
+                    {*<h4>First Thumbnail label</h4>*}
+                    {*<p>*}
 
-                    </p>
-                </div>
-            </div>
+                    {*</p>*}
+                {*</div>*}
+            {*</div>*}
             <div class="item active">
                 <img alt="" src="http://7xn4jv.com1.z0.glb.clouddn.com/yinhe.jpg">
                 <div class="carousel-caption">
