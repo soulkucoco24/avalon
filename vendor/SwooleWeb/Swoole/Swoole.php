@@ -612,6 +612,9 @@ class Swoole
             $this->request->initWithLamp();
         }
 
+        # access-log
+        $this->log->trace( sprintf("[%s] %s",$this->request->meta['method'],$this->request->meta['uri']));
+
         $mvc = call_user_func($this->router_function);
         if ($mvc === false)
         {

@@ -293,13 +293,9 @@ abstract class WebSocket extends HttpServer
     {
         try{
             //未连接
-            if (!isset($this->connections[$fd]))
-            {
-                $this->log("new Connection[{$fd}] ");
+            if (!isset($this->connections[$fd])) {
                 return parent::onReceive($server, $fd, $from_id, $data);
-            }else
-                $this->log("Connection[{$fd}] ");
-
+            }
 
             while (strlen($data) > 0 and isset($this->connections[$fd]))
             {
