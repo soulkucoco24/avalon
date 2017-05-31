@@ -2,16 +2,16 @@
 default_page = "index.html"
 
 [server]
-host = "127.0.0.1"
-port = 8088
-max_request = 2000
-worker_num = 4
-webroot = 'xdd.cn'
-document_root = "/public"
-process_rename = 1
+host = "shikii.cc"
+port = 80
+max_request = 1700
+worker_num = 1
+webroot = 'shikii.cc'
+;document_root = "/public"
+;process_rename = 1
 keepalive = 1
 ;gzip_open = 1
-user = www-data
+;user = www-data
 expire_open = 1
 
 [session]
@@ -20,10 +20,10 @@ session_life = 1800
 
 [access]
 deny_dir = "libs,class,templates"
-static_dir = "static/,"
+static_dir = "/public,/public/static,/apps/templates/"
 static_ext = "js,jpg,gif,png,css,html,ico"
 dynamic_ext = "php"
-post_maxsize = 2000000
+post_maxsize = 200000
 
 [apps]
 charset = "utf-8"
