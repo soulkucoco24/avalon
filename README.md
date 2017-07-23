@@ -12,6 +12,9 @@
 
 
 ## 工程介绍
+  启动工程：php server/websocket_server.php start（centos7 zsh下启动有奇怪的bug）</br>
+  启动工程前：拷贝一份server/swoole.ini.bak配置文件，去掉后缀bak，修改里面的参数。
+  
   框架：php扩展swoole
 
 
