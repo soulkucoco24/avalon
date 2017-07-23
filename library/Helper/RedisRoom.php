@@ -38,7 +38,7 @@ class RedisRoom
     static function self()
     {
         if( !self::$p) {
-            self::$p = new RedisRoom;
+            self::$p = new self;
             self::$p->redis = \Swoole::$php->redis;  //这里的赋值很奇怪。。。
         }
 
