@@ -1,3 +1,9 @@
+<video width="320" height="240" controls>
+  <source src="大海.mp4"  type="video/mp4">
+
+  您的浏览器不支持 HTML5 video 标签。
+</video>
+<!-- 
 {include file="widget/nav.tpl"}
 
 {*<script src="https://cdnjs.cloudflare.com/ajax/libs/numeric/1.2.6/numeric.js"></script>*}
@@ -63,4 +69,4 @@
             <span class="glyphicon glyphicon-chevron-right"></span>
         </a>
     </div>
-</div>
+</div> -->
