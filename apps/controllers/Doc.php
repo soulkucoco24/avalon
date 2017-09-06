@@ -99,7 +99,7 @@ var_dump($this->redisRoom->roomInfo(1));
     }
 
     function gamerule() {
-        return $this->assign('data','游戏规则......')->display('/static.tpl');
+        return $this->assign('data','STATIC_RULE_AVALON')->display('/static.tpl');
     }
 
 }
