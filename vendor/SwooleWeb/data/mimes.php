@@ -11,6 +11,7 @@ $mimes = array(
     'text/html' => 'html',
     'text/xml' => 'xml',
     'application/x-tar' => 'tar',
+    'application/octet-stream' => 'mp4',
     'application/vnd.ms-powerpoint' => 'ppt',
     'application/pdf' => 'pdf',
     'application/x-shockwave-flash' => 'swf',
