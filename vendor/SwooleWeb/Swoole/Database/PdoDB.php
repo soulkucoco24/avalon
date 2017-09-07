@@ -181,13 +181,15 @@ class PdoDB extends \PDO implements Swoole\IDatabase
         return $this->lastStatement ? $this->lastStatement->rowCount() : false;
     }
 
+    function __destruct() {}
     /**
 	 * 关闭连接，释放资源
 	 * @return null
 	 */
 	function close()
 	{
-		unset($this);
+$this->__destruct();
+//		unset($this);
 	}
 
     function quote($str, $paramtype = NULL /*暂时没用 为了不报错*/)
