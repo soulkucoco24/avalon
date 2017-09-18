@@ -148,6 +148,9 @@ abstract class WebSocket extends HttpServer
     function onConnect($serv, $fd, $from_id)
     {
         $this->cleanBuffer($fd);
+
+        $pid = getmypid();
+        $this->log("Event: client[#$client_id@$from_id #$pid] connect");
     }
 
     /**
@@ -189,6 +192,9 @@ abstract class WebSocket extends HttpServer
     function onClose($serv, $client_id, $from_id)
     {
         $this->onExit($client_id);
+
+        $pid = getmypid();
+        $this->log("Event: client[#$client_id@$from_id #$pid] close");
     }
 
     /**
