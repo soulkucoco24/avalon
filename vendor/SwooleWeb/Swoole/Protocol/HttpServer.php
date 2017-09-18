@@ -70,14 +70,14 @@ class HttpServer extends Swoole\Protocol\WebServer implements  Swoole\IFace\Prot
     function onConnect($serv, $client_id, $from_id)
     {
         $pid = getmypid();
-        $this->log("Event: client[#$client_id@$from_id #$pid] connect");
+        $this->log("HTTPS-S:onConnect: client[#$client_id@$from_id #$pid]");
     }
 
 
     function onClose($serv, $client_id, $from_id)
     {
         $pid = getmypid();
-        $this->log("Event: client[#$client_id@$from_id #$pid] close");
+        $this->log("HTTP-S:onClose: client[#$client_id@$from_id #$pid]");
         $this->cleanBuffer($client_id);
     }
 

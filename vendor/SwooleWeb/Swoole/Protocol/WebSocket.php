@@ -150,7 +150,7 @@ abstract class WebSocket extends HttpServer
         $this->cleanBuffer($fd);
 
         $pid = getmypid();
-        $this->log("Event: client[#$client_id@$from_id #$pid] connect");
+        $this->log("onConnect: client[#$fd@$from_id #$pid]");
     }
 
     /**
@@ -194,7 +194,7 @@ abstract class WebSocket extends HttpServer
         $this->onExit($client_id);
 
         $pid = getmypid();
-        $this->log("Event: client[#$client_id@$from_id #$pid] close");
+        $this->log("onClose: client[#$client_id@$from_id #$pid]");
     }
 
     /**
@@ -635,7 +635,7 @@ abstract class WebSocket extends HttpServer
     public function close($fd, $code = self::CLOSE_NORMAL, $reason = '')
     {
         $this->send($fd, pack('n', $code).$reason, self::OPCODE_CONNECTION_CLOSE);
-        $this->log("server close connection[$fd]. reason: $reason, close_code = $code");
+        $this->log("WEBSOCKET-S close connection[$fd]. reason: $reason, close_code = $code");
         return $this->server->close($fd);
     }
 
