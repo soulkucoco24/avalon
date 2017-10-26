@@ -2,9 +2,9 @@
 
 {*<script src="https://cdnjs.cloudflare.com/ajax/libs/numeric/1.2.6/numeric.js"></script>*}
 {*<script src="/plugin/black-hole.js"></script>*}
-{*<script>*}
+<!-- {*<script>*}
     {*BlackHole.blackHoleifyImage('canvas_placeholder', 'http://7xn4jv.com1.z0.glb.clouddn.com/yinhe.jpg')*}
-{*</script>*}
+{*</script>*} -->
 
 {*<div>*}
     {*<head>头部</head>*}
@@ -30,25 +30,25 @@
             {*<div class="item">*}
                 {*<img alt="">*}
                 {*<div class="carousel-caption" id="canvas_placeholder">*}
-                    {*<h4>First Thumbnail label</h4>*}
+                    {*<h4>First label</h4>*}
                     {*<p>*}
 
                     {*</p>*}
                 {*</div>*}
             {*</div>*}
             <div class="item active">
-                <img alt="" src="http://7xn4jv.com1.z0.glb.clouddn.com/yinhe.jpg">
+                <img alt="" src="http://oyfdevoh8.bkt.clouddn.com/blackhole.jpg">
                 <div class="carousel-caption">
-                    <h4>Second Thumbnail label</h4>
+                    <h4>Second label</h4>
                     <p>
                         Cras justo odio, dapibus ac facilisis in, egestas eget quam. Donec id elit non mi porta gravida at eget metus. Nullam id dolor id nibh ultricies vehicula ut id elit.
                     </p>
                 </div>
             </div>
             <div class="item">
-                <img alt="" src="http://7xn4jv.com1.z0.glb.clouddn.com/yinhe.jpg">
+                <img alt="" src="http://oyfdevoh8.bkt.clouddn.com/blackhole.jpg">
                 <div class="carousel-caption">
-                    <h4>Third Thumbnail label</h4>
+                    <h4>Third label</h4>
                     <p>
                         Cras justo odio, dapibus ac facilisis in, egestas eget quam. Donec id elit non mi porta gravida at eget metus. Nullam id dolor id nibh ultricies vehicula ut id elit.
                     </p>
