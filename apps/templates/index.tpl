@@ -1,7 +1,7 @@
 {include file="widget/nav.tpl"}
 
 {*<script src="https://cdnjs.cloudflare.com/ajax/libs/numeric/1.2.6/numeric.js"></script>*}
-{*<script src="/plugin/black-hole.js"></script>*}
+<!-- {*<script src="/plugin/black-hole.js"></script>*} -->
 <!-- {*<script>*}
     {*BlackHole.blackHoleifyImage('canvas_placeholder', 'http://7xn4jv.com1.z0.glb.clouddn.com/yinhe.jpg')*}
 {*</script>*} -->
