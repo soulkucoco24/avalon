@@ -1,0 +1,1031 @@
+Could not open input file: /home/work/avalon/server/websocket_server.php
+[2018-01-06 05:58:55]	INFO	SwooleFramework[#0]. running. on shikii.cc:80
+[2018-01-06 05:59:05]	INFO	onConnect: client[#1@0 #21213]
+[2018-01-06 06:01:06]	INFO	Offline: 1
+[2018-01-06 06:01:06]	INFO	onClose: client[#1@0 #21213]
+[2018-01-06 07:48:26]	INFO	onConnect: client[#2@0 #21213]
+[2018-01-06 07:48:26]	INFO	Offline: 2
+[2018-01-06 07:48:26]	INFO	onClose: client[#2@0 #21213]
+[2018-01-06 08:07:57]	INFO	onConnect: client[#3@0 #21213]
+[2018-01-06 08:08:03]	INFO	Offline: 3
+[2018-01-06 08:08:03]	INFO	onClose: client[#3@0 #21213]
+[2018-01-06 11:28:42]	INFO	onConnect: client[#4@0 #21213]
+[2018-01-06 11:28:42]	INFO	Offline: 4
+[2018-01-06 11:28:42]	INFO	onClose: client[#4@-1 #21213]
+[2018-01-06 11:28:42]	INFO	onConnect: client[#5@0 #21213]
+[2018-01-06 11:28:42]	INFO	Offline: 5
+[2018-01-06 11:28:42]	INFO	onClose: client[#5@-1 #21213]
+[2018-01-06 14:49:35]	INFO	onConnect: client[#6@0 #21213]
+[2018-01-06 14:49:37]	INFO	Offline: 6
+[2018-01-06 14:49:37]	INFO	onClose: client[#6@-1 #21213]
+[2018-01-06 15:04:00]	INFO	onConnect: client[#7@0 #21213]
+[2018-01-06 15:04:00]	INFO	Offline: 7
+[2018-01-06 15:04:00]	INFO	onClose: client[#7@-1 #21213]
+[2018-01-06 15:04:00]	INFO	onConnect: client[#8@0 #21213]
+PHP Notice:  Undefined index: path in /home/work/avalon_php/vendor/SwooleWeb/Swoole/Protocol/HttpServer.php on line 293
+PHP Notice:  Undefined index: path in /home/work/avalon_php/vendor/SwooleWeb/Swoole/Protocol/HttpServer.php on line 293
+PHP Notice:  Undefined index: path in /home/work/avalon_php/vendor/SwooleWeb/Swoole/Protocol/HttpServer.php on line 293
+PHP Warning:  Error while sending QUERY packet. PID=21213 in /home/work/avalon_php/vendor/SwooleWeb/Swoole/Database/PdoDB.php on line 124
+PHP Notice:  Only variable references should be returned by reference in /home/work/avalon_php/vendor/SwooleWeb/Swoole/Database/PdoDB.php on line 137
+PHP Warning:  Invalid argument supplied for foreach() in /home/work/avalon_php/library/Helper/RedisRoom.php on line 86
+PHP Notice:  Undefined offset: 1 in /home/work/avalon_php/vendor/SwooleWeb/Swoole/Http/Parser.php on line 34
+PHP Notice:  Undefined offset: 2 in /home/work/avalon_php/vendor/SwooleWeb/Swoole/Http/Parser.php on line 34
+PHP Notice:  Undefined index: path in /home/work/avalon_php/vendor/SwooleWeb/Swoole/Protocol/HttpServer.php on line 293
+PHP Notice:  Only variable references should be returned by reference in /home/work/avalon_php/vendor/SwooleWeb/Swoole/Database/PdoDB.php on line 137
+PHP Warning:  Invalid argument supplied for foreach() in /home/work/avalon_php/library/Helper/RedisRoom.php on line 86
+PHP Fatal error:  Uncaught Error: Call to a member function fetch() on boolean in /home/work/avalon_php/vendor/SwooleWeb/Swoole/Auth.php:126
+Stack trace:
+#0 /home/work/avalon_php/apps/controllers/User.php(17): Swoole\Auth->login('w57132855', 'w57132855')
+#1 /home/work/avalon_php/vendor/SwooleWeb/Swoole/Swoole.php(708): App\Controller\User->login(NULL)
+#2 /home/work/avalon_php/vendor/SwooleWeb/Swoole/Swoole.php(564): Swoole->runMVC()
+#3 /home/work/avalon_php/vendor/SwooleWeb/Swoole/Protocol/WebSocket.php(230): Swoole->handlerServer(Object(Swoole\Request))
+#4 /home/work/avalon_php/vendor/SwooleWeb/Swoole/Protocol/WebSocket.php(267): Swoole\Protocol\WebSocket->onHttpRequest(Object(Swoole\Request))
+#5 /home/work/avalon_php/vendor/SwooleWeb/Swoole/Protocol/HttpServer.php(263): Swoole\Protocol\WebSocket->onRequest(Object(Swoole\Request))
+#6 /home/work/avalon_php/vendor/SwooleWeb/Swoole/Protocol/WebSocket.php(303): Swoole\Protocol\HttpServer->onReceive(Object(Swoole\Server), 317, 0, 'POST /user/logi...')
+#7 {main}
+  thrown in /home/work/avalon_php/vendor/SwooleWeb/Swoole/Auth.php on line 126
+[2018-01-06 15:04:00]	INFO	Offline: 8
+[2018-01-06 15:04:00]	INFO	onClose: client[#8@-1 #21213]
+[2018-01-06 15:04:01]	INFO	onConnect: client[#9@0 #21213]
+[2018-01-06 15:04:01]	INFO	Offline: 9
+[2018-01-06 15:04:01]	INFO	onClose: client[#9@-1 #21213]
+[2018-01-06 15:04:01]	INFO	onConnect: client[#10@0 #21213]
+[2018-01-06 15:04:02]	INFO	Offline: 10
+[2018-01-06 15:04:02]	INFO	onClose: client[#10@-1 #21213]
+[2018-01-06 15:04:04]	INFO	onConnect: client[#11@0 #21213]
+[2018-01-06 15:04:04]	INFO	Offline: 11
+[2018-01-06 15:04:04]	INFO	onClose: client[#11@-1 #21213]
+[2018-01-06 15:04:05]	INFO	onConnect: client[#12@0 #21213]
+[2018-01-06 15:04:05]	INFO	Offline: 12
+[2018-01-06 15:04:05]	INFO	onClose: client[#12@-1 #21213]
+[2018-01-06 15:04:05]	INFO	onConnect: client[#13@0 #21213]
+[2018-01-06 15:04:05]	INFO	Offline: 13
+[2018-01-06 15:04:05]	INFO	onClose: client[#13@-1 #21213]
+[2018-01-06 15:04:06]	INFO	onConnect: client[#14@0 #21213]
+[2018-01-06 15:04:06]	INFO	Offline: 14
+[2018-01-06 15:04:06]	INFO	onClose: client[#14@-1 #21213]
+[2018-01-06 15:04:06]	INFO	onConnect: client[#15@0 #21213]
+[2018-01-06 15:04:06]	INFO	Offline: 15
+[2018-01-06 15:04:06]	INFO	onClose: client[#15@-1 #21213]
+[2018-01-06 15:04:07]	INFO	onConnect: client[#16@0 #21213]
+[2018-01-06 15:04:07]	INFO	Offline: 16
+[2018-01-06 15:04:07]	INFO	onClose: client[#16@-1 #21213]
+[2018-01-06 15:04:07]	INFO	onConnect: client[#17@0 #21213]
+[2018-01-06 15:04:07]	INFO	Offline: 17
+[2018-01-06 15:04:07]	INFO	onClose: client[#17@-1 #21213]
+[2018-01-06 15:04:08]	INFO	onConnect: client[#18@0 #21213]
+[2018-01-06 15:04:08]	INFO	Offline: 18
+[2018-01-06 15:04:08]	INFO	onClose: client[#18@-1 #21213]
+[2018-01-06 15:04:08]	INFO	onConnect: client[#19@0 #21213]
+[2018-01-06 15:04:09]	INFO	Offline: 19
+[2018-01-06 15:04:09]	INFO	onClose: client[#19@-1 #21213]
+[2018-01-06 15:04:09]	INFO	onConnect: client[#20@0 #21213]
+[2018-01-06 15:04:09]	INFO	Offline: 20
+[2018-01-06 15:04:09]	INFO	onClose: client[#20@-1 #21213]
+[2018-01-06 15:04:11]	INFO	onConnect: client[#21@0 #21213]
+[2018-01-06 15:04:11]	INFO	Offline: 21
+[2018-01-06 15:04:11]	INFO	onClose: client[#21@-1 #21213]
+[2018-01-06 15:04:12]	INFO	onConnect: client[#22@0 #21213]
+[2018-01-06 15:04:12]	INFO	Offline: 22
+[2018-01-06 15:04:12]	INFO	onClose: client[#22@-1 #21213]
+[2018-01-06 15:04:12]	INFO	onConnect: client[#23@0 #21213]
+[2018-01-06 15:04:12]	INFO	Offline: 23
+[2018-01-06 15:04:12]	INFO	onClose: client[#23@-1 #21213]
+[2018-01-06 15:04:13]	INFO	onConnect: client[#24@0 #21213]
+[2018-01-06 15:04:13]	INFO	Offline: 24
+[2018-01-06 15:04:13]	INFO	onClose: client[#24@-1 #21213]
+[2018-01-06 15:04:13]	INFO	onConnect: client[#25@0 #21213]
+[2018-01-06 15:04:13]	INFO	Offline: 25
+[2018-01-06 15:04:13]	INFO	onClose: client[#25@-1 #21213]
+[2018-01-06 15:20:17]	INFO	onConnect: client[#26@0 #21213]
+[2018-01-06 15:20:19]	INFO	Offline: 26
+[2018-01-06 15:20:19]	INFO	onClose: client[#26@-1 #21213]
+[2018-01-06 16:14:43]	INFO	onConnect: client[#27@0 #21213]
+[2018-01-06 16:14:44]	INFO	Offline: 27
+[2018-01-06 16:14:44]	INFO	onClose: client[#27@-1 #21213]
+[2018-01-06 20:26:08]	INFO	onConnect: client[#28@0 #21213]
+[2018-01-06 20:26:10]	INFO	Offline: 28
+[2018-01-06 20:26:10]	INFO	onClose: client[#28@-1 #21213]
+[2018-01-06 20:43:49]	INFO	onConnect: client[#29@0 #21213]
+[2018-01-06 20:43:51]	INFO	Offline: 29
+[2018-01-06 20:43:51]	INFO	onClose: client[#29@-1 #21213]
+[2018-01-06 20:45:50]	INFO	onConnect: client[#30@0 #21213]
+[2018-01-06 20:45:50]	INFO	Offline: 30
+[2018-01-06 20:45:50]	INFO	onClose: client[#30@-1 #21213]
+[2018-01-06 20:47:00]	INFO	onConnect: client[#31@0 #21213]
+[2018-01-06 20:47:06]	INFO	Offline: 31
+[2018-01-06 20:47:06]	INFO	onClose: client[#31@0 #21213]
+[2018-01-06 22:18:59]	INFO	onConnect: client[#32@0 #21213]
+[2018-01-06 22:18:59]	INFO	Offline: 32
+[2018-01-06 22:18:59]	INFO	onClose: client[#32@0 #21213]
+[2018-01-06 23:58:43]	INFO	onConnect: client[#33@0 #21213]
+[2018-01-06 23:58:43]	INFO	Offline: 33
+[2018-01-06 23:58:43]	INFO	onClose: client[#33@-1 #21213]
+[2018-01-07 03:39:38]	INFO	onConnect: client[#34@0 #21213]
+[2018-01-07 03:39:38]	INFO	Offline: 34
+[2018-01-07 03:39:38]	INFO	onClose: client[#34@0 #21213]
+[2018-01-07 03:39:39]	INFO	onConnect: client[#35@0 #21213]
+[2018-01-07 03:39:39]	INFO	Offline: 35
+[2018-01-07 03:39:39]	INFO	onClose: client[#35@-1 #21213]
+[2018-01-07 03:39:39]	INFO	onConnect: client[#36@0 #21213]
+[2018-01-07 03:39:39]	INFO	Offline: 36
+[2018-01-07 03:39:39]	INFO	onClose: client[#36@-1 #21213]
+[2018-01-07 03:39:40]	INFO	onConnect: client[#37@0 #21213]
+[2018-01-07 03:39:40]	INFO	Offline: 37
+[2018-01-07 03:39:40]	INFO	onClose: client[#37@-1 #21213]
+[2018-01-07 03:39:41]	INFO	onConnect: client[#38@0 #21213]
+[2018-01-07 03:39:41]	INFO	Offline: 38
+[2018-01-07 03:39:41]	INFO	onClose: client[#38@-1 #21213]
+[2018-01-07 03:39:41]	INFO	onConnect: client[#39@0 #21213]
+[2018-01-07 03:39:41]	INFO	Offline: 39
+[2018-01-07 03:39:41]	INFO	onClose: client[#39@-1 #21213]
+[2018-01-07 03:39:42]	INFO	onConnect: client[#40@0 #21213]
+[2018-01-07 03:39:42]	INFO	Offline: 40
+[2018-01-07 03:39:42]	INFO	onClose: client[#40@-1 #21213]
+[2018-01-07 04:16:03]	INFO	onConnect: client[#41@0 #21213]
+[2018-01-07 04:16:03]	INFO	Offline: 41
+[2018-01-07 04:16:03]	INFO	onClose: client[#41@0 #21213]
+[2018-01-07 04:16:03]	INFO	onConnect: client[#42@0 #21213]
+[2018-01-07 04:16:03]	INFO	Offline: 42
+[2018-01-07 04:16:03]	INFO	onClose: client[#42@0 #21213]
+[2018-01-07 06:47:34]	INFO	onConnect: client[#43@0 #21213]
+[2018-01-07 06:47:40]	INFO	Offline: 43
+[2018-01-07 06:47:40]	INFO	onClose: client[#43@0 #21213]
+[2018-01-07 14:41:49]	INFO	onConnect: client[#44@0 #21213]
+[2018-01-07 14:41:51]	INFO	Offline: 44
+[2018-01-07 14:41:51]	INFO	onClose: client[#44@-1 #21213]
+[2018-01-07 14:42:49]	INFO	onConnect: client[#45@0 #21213]
+[2018-01-07 14:42:49]	INFO	Offline: 45
+[2018-01-07 14:42:49]	INFO	onClose: client[#45@-1 #21213]
+[2018-01-07 14:43:02]	INFO	onConnect: client[#46@0 #21213]
+[2018-01-07 14:43:02]	INFO	Offline: 46
+[2018-01-07 14:43:02]	INFO	onClose: client[#46@-1 #21213]
+[2018-01-07 15:24:31]	INFO	onConnect: client[#47@0 #21213]
+[2018-01-07 15:24:32]	INFO	onConnect: client[#48@0 #21213]
+[2018-01-07 15:26:12]	INFO	Offline: 47
+[2018-01-07 15:26:12]	INFO	onClose: client[#47@0 #21213]
+[2018-01-07 15:26:12]	INFO	Offline: 48
+[2018-01-07 15:26:12]	INFO	onClose: client[#48@0 #21213]
+[2018-01-07 16:43:57]	INFO	onConnect: client[#49@0 #21213]
+[2018-01-07 16:44:59]	INFO	Offline: 49
+[2018-01-07 16:44:59]	INFO	onClose: client[#49@0 #21213]
+[2018-01-07 17:11:34]	INFO	onConnect: client[#50@0 #21213]
+[2018-01-07 17:11:34]	INFO	Offline: 50
+[2018-01-07 17:11:34]	INFO	onClose: client[#50@-1 #21213]
+[2018-01-07 17:51:28]	INFO	onConnect: client[#51@0 #21213]
+[2018-01-07 17:51:28]	INFO	Offline: 51
+[2018-01-07 17:51:28]	INFO	onClose: client[#51@-1 #21213]
+[2018-01-07 17:51:28]	INFO	onConnect: client[#52@0 #21213]
+[2018-01-07 17:51:28]	INFO	Offline: 52
+[2018-01-07 17:51:28]	INFO	onClose: client[#52@-1 #21213]
+[2018-01-07 17:51:29]	INFO	onConnect: client[#53@0 #21213]
+[2018-01-07 17:51:29]	INFO	Offline: 53
+[2018-01-07 17:51:29]	INFO	onClose: client[#53@-1 #21213]
+[2018-01-07 18:33:22]	INFO	onConnect: client[#54@0 #21213]
+[2018-01-07 18:34:47]	INFO	Offline: 54
+[2018-01-07 18:34:47]	INFO	onClose: client[#54@0 #21213]
+[2018-01-08 00:50:35]	INFO	onConnect: client[#55@0 #21213]
+[2018-01-08 00:50:35]	INFO	wait request data. fd=55
+[2018-01-08 00:50:45]	INFO	Offline: 55
+[2018-01-08 00:50:45]	INFO	onClose: client[#55@0 #21213]
+[2018-01-08 00:51:23]	INFO	onConnect: client[#56@0 #21213]
+[2018-01-08 00:51:23]	INFO	Offline: 56
+[2018-01-08 00:51:23]	INFO	onClose: client[#56@-1 #21213]
+[2018-01-08 00:51:24]	INFO	onConnect: client[#57@0 #21213]
+[2018-01-08 00:51:24]	INFO	Offline: 57
+[2018-01-08 00:51:24]	INFO	onClose: client[#57@-1 #21213]
+[2018-01-08 00:51:24]	INFO	onConnect: client[#58@0 #21213]
+[2018-01-08 00:51:25]	INFO	Offline: 58
+[2018-01-08 00:51:25]	INFO	onClose: client[#58@-1 #21213]
+[2018-01-08 00:51:25]	INFO	onConnect: client[#59@0 #21213]
+[2018-01-08 00:51:26]	INFO	Offline: 59
+[2018-01-08 00:51:26]	INFO	onClose: client[#59@0 #21213]
+[2018-01-08 01:07:36]	INFO	onConnect: client[#60@0 #21213]
+[2018-01-08 01:07:36]	INFO	Offline: 60
+[2018-01-08 01:07:36]	INFO	onClose: client[#60@0 #21213]
+[2018-01-08 01:50:19]	INFO	onConnect: client[#61@0 #21213]
+[2018-01-08 01:50:19]	INFO	Offline: 61
+[2018-01-08 01:50:19]	INFO	onClose: client[#61@-1 #21213]
+[2018-01-08 01:50:19]	INFO	onConnect: client[#62@0 #21213]
+[2018-01-08 01:50:19]	INFO	Offline: 62
+[2018-01-08 01:50:19]	INFO	onClose: client[#62@0 #21213]
+[2018-01-08 01:50:21]	INFO	onConnect: client[#63@0 #21213]
+[2018-01-08 01:50:21]	INFO	Offline: 63
+[2018-01-08 01:50:21]	INFO	onClose: client[#63@-1 #21213]
+[2018-01-08 01:50:22]	INFO	onConnect: client[#64@0 #21213]
+[2018-01-08 01:50:22]	INFO	onConnect: client[#65@0 #21213]
+[2018-01-08 01:50:22]	INFO	Offline: 65
+[2018-01-08 01:50:22]	INFO	onClose: client[#65@-1 #21213]
+[2018-01-08 01:50:23]	INFO	Offline: 64
+[2018-01-08 01:50:23]	INFO	onClose: client[#64@0 #21213]
+[2018-01-08 01:50:23]	INFO	onConnect: client[#66@0 #21213]
+[2018-01-08 01:50:23]	INFO	Offline: 66
+[2018-01-08 01:50:23]	INFO	onClose: client[#66@0 #21213]
+[2018-01-08 01:50:23]	INFO	onConnect: client[#67@0 #21213]
+[2018-01-08 01:50:24]	INFO	Offline: 67
+[2018-01-08 01:50:24]	INFO	onClose: client[#67@0 #21213]
+[2018-01-08 01:50:24]	INFO	onConnect: client[#68@0 #21213]
+[2018-01-08 01:50:25]	INFO	Offline: 68
+[2018-01-08 01:50:25]	INFO	onClose: client[#68@0 #21213]
+[2018-01-08 01:50:29]	INFO	onConnect: client[#69@0 #21213]
+[2018-01-08 01:50:29]	INFO	Offline: 69
+[2018-01-08 01:50:29]	INFO	onClose: client[#69@0 #21213]
+[2018-01-08 03:58:37]	INFO	onConnect: client[#70@0 #21213]
+[2018-01-08 03:58:37]	INFO	Offline: 70
+[2018-01-08 03:58:37]	INFO	onClose: client[#70@-1 #21213]
+[2018-01-08 05:54:03]	INFO	onConnect: client[#71@0 #21213]
+[2018-01-08 05:54:13]	INFO	Offline: 71
+[2018-01-08 05:54:13]	INFO	onClose: client[#71@0 #21213]
+[2018-01-08 07:11:42]	INFO	onConnect: client[#72@0 #21213]
+[2018-01-08 07:11:45]	INFO	Offline: 72
+[2018-01-08 07:11:45]	INFO	onClose: client[#72@-1 #21213]
+[2018-01-08 08:14:52]	INFO	onConnect: client[#73@0 #21213]
+[2018-01-08 08:14:52]	INFO	onConnect: client[#74@0 #21213]
+[2018-01-08 08:17:07]	INFO	Offline: 73
+[2018-01-08 08:17:07]	INFO	onClose: client[#73@0 #21213]
+[2018-01-08 08:17:08]	INFO	Offline: 74
+[2018-01-08 08:17:08]	INFO	onClose: client[#74@0 #21213]
+[2018-01-08 09:13:23]	INFO	onConnect: client[#75@0 #21213]
+[2018-01-08 09:13:23]	INFO	Offline: 75
+[2018-01-08 09:13:23]	INFO	onClose: client[#75@-1 #21213]
+[2018-01-08 10:53:35]	INFO	onConnect: client[#76@0 #21213]
+[2018-01-08 10:53:35]	INFO	Offline: 76
+[2018-01-08 10:53:35]	INFO	onClose: client[#76@0 #21213]
+[2018-01-08 13:48:14]	INFO	onConnect: client[#77@0 #21213]
+[2018-01-08 13:48:14]	INFO	Offline: 77
+[2018-01-08 13:48:14]	INFO	onClose: client[#77@0 #21213]
+[2018-01-08 13:49:18]	INFO	onConnect: client[#78@0 #21213]
+[2018-01-08 13:49:18]	INFO	wait request data. fd=78
+[2018-01-08 13:49:48]	INFO	Offline: 78
+[2018-01-08 13:49:48]	INFO	onClose: client[#78@0 #21213]
+[2018-01-08 18:44:28]	INFO	onConnect: client[#79@0 #21213]
+[2018-01-08 18:44:28]	INFO	Offline: 79
+[2018-01-08 18:44:28]	INFO	onClose: client[#79@-1 #21213]
+[2018-01-08 18:45:28]	INFO	onConnect: client[#80@0 #21213]
+[2018-01-08 18:45:28]	INFO	Offline: 80
+[2018-01-08 18:45:28]	INFO	onClose: client[#80@-1 #21213]
+[2018-01-08 19:40:02]	INFO	onConnect: client[#81@0 #21213]
+[2018-01-08 19:40:02]	INFO	Offline: 81
+[2018-01-08 19:40:02]	INFO	onClose: client[#81@-1 #21213]
+[2018-01-08 20:00:28]	INFO	onConnect: client[#82@0 #21213]
+[2018-01-08 20:02:49]	INFO	Offline: 82
+[2018-01-08 20:02:49]	INFO	onClose: client[#82@0 #21213]
+[2018-01-08 20:23:34]	INFO	onConnect: client[#83@0 #21213]
+[2018-01-08 20:23:43]	INFO	Offline: 83
+[2018-01-08 20:23:43]	INFO	onClose: client[#83@0 #21213]
+[2018-01-08 20:25:20]	INFO	onConnect: client[#84@0 #21213]
+[2018-01-08 20:25:30]	INFO	Offline: 84
+[2018-01-08 20:25:30]	INFO	onClose: client[#84@0 #21213]
+[2018-01-08 21:33:33]	INFO	onConnect: client[#85@0 #21213]
+[2018-01-08 21:33:34]	INFO	Offline: 85
+[2018-01-08 21:33:34]	INFO	onClose: client[#85@0 #21213]
+[2018-01-08 21:33:34]	INFO	onConnect: client[#86@0 #21213]
+[2018-01-08 21:33:34]	INFO	Offline: 86
+[2018-01-08 21:33:34]	INFO	onClose: client[#86@0 #21213]
+[2018-01-08 21:50:51]	INFO	onConnect: client[#87@0 #21213]
+[2018-01-08 21:50:53]	INFO	Offline: 87
+[2018-01-08 21:50:53]	INFO	onClose: client[#87@-1 #21213]
+[2018-01-09 01:04:20]	INFO	onConnect: client[#88@0 #21213]
+[2018-01-09 01:04:20]	INFO	Offline: 88
+[2018-01-09 01:04:20]	INFO	onClose: client[#88@-1 #21213]
+[2018-01-09 01:04:20]	INFO	onConnect: client[#89@0 #21213]
+[2018-01-09 01:04:20]	INFO	Offline: 89
+[2018-01-09 01:04:20]	INFO	onClose: client[#89@-1 #21213]
+[2018-01-09 01:04:20]	INFO	onConnect: client[#90@0 #21213]
+[2018-01-09 01:04:20]	INFO	Offline: 90
+[2018-01-09 01:04:20]	INFO	onClose: client[#90@-1 #21213]
+[2018-01-09 01:04:21]	INFO	onConnect: client[#91@0 #21213]
+[2018-01-09 01:04:21]	INFO	Offline: 91
+[2018-01-09 01:04:21]	INFO	onClose: client[#91@-1 #21213]
+[2018-01-09 01:04:21]	INFO	onConnect: client[#92@0 #21213]
+[2018-01-09 01:04:21]	INFO	Offline: 92
+[2018-01-09 01:04:21]	INFO	onClose: client[#92@-1 #21213]
+[2018-01-09 01:04:21]	INFO	onConnect: client[#93@0 #21213]
+[2018-01-09 01:04:21]	INFO	Offline: 93
+[2018-01-09 01:04:21]	INFO	onClose: client[#93@-1 #21213]
+[2018-01-09 01:04:21]	INFO	onConnect: client[#94@0 #21213]
+[2018-01-09 01:04:21]	INFO	Offline: 94
+[2018-01-09 01:04:21]	INFO	onClose: client[#94@-1 #21213]
+[2018-01-09 01:04:22]	INFO	onConnect: client[#95@0 #21213]
+[2018-01-09 01:04:22]	INFO	Offline: 95
+[2018-01-09 01:04:22]	INFO	onClose: client[#95@-1 #21213]
+[2018-01-09 01:04:22]	INFO	onConnect: client[#96@0 #21213]
+[2018-01-09 01:04:22]	INFO	Offline: 96
+[2018-01-09 01:04:22]	INFO	onClose: client[#96@-1 #21213]
+[2018-01-09 01:04:22]	INFO	onConnect: client[#97@0 #21213]
+[2018-01-09 01:04:22]	INFO	Offline: 97
+[2018-01-09 01:04:22]	INFO	onClose: client[#97@-1 #21213]
+[2018-01-09 01:04:23]	INFO	onConnect: client[#98@0 #21213]
+[2018-01-09 01:04:23]	INFO	Offline: 98
+[2018-01-09 01:04:23]	INFO	onClose: client[#98@-1 #21213]
+[2018-01-09 01:04:23]	INFO	onConnect: client[#99@0 #21213]
+[2018-01-09 01:04:23]	INFO	Offline: 99
+[2018-01-09 01:04:23]	INFO	onClose: client[#99@-1 #21213]
+[2018-01-09 01:04:23]	INFO	onConnect: client[#100@0 #21213]
+[2018-01-09 01:04:23]	INFO	Offline: 100
+[2018-01-09 01:04:23]	INFO	onClose: client[#100@-1 #21213]
+[2018-01-09 01:04:24]	INFO	onConnect: client[#101@0 #21213]
+[2018-01-09 01:04:24]	INFO	Offline: 101
+[2018-01-09 01:04:24]	INFO	onClose: client[#101@-1 #21213]
+[2018-01-09 01:04:24]	INFO	onConnect: client[#102@0 #21213]
+[2018-01-09 01:04:24]	INFO	Offline: 102
+[2018-01-09 01:04:24]	INFO	onClose: client[#102@-1 #21213]
+[2018-01-09 01:04:24]	INFO	onConnect: client[#103@0 #21213]
+[2018-01-09 01:04:24]	INFO	Offline: 103
+[2018-01-09 01:04:24]	INFO	onClose: client[#103@-1 #21213]
+[2018-01-09 01:04:25]	INFO	onConnect: client[#104@0 #21213]
+[2018-01-09 01:04:25]	INFO	Offline: 104
+[2018-01-09 01:04:25]	INFO	onClose: client[#104@-1 #21213]
+[2018-01-09 01:04:26]	INFO	onConnect: client[#105@0 #21213]
+[2018-01-09 01:04:26]	INFO	Offline: 105
+[2018-01-09 01:04:26]	INFO	onClose: client[#105@-1 #21213]
+[2018-01-09 01:04:26]	INFO	onConnect: client[#106@0 #21213]
+[2018-01-09 01:04:26]	INFO	Offline: 106
+[2018-01-09 01:04:26]	INFO	onClose: client[#106@-1 #21213]
+[2018-01-09 01:04:29]	INFO	onConnect: client[#107@0 #21213]
+[2018-01-09 01:04:29]	INFO	Offline: 107
+[2018-01-09 01:04:29]	INFO	onClose: client[#107@-1 #21213]
+[2018-01-09 01:04:30]	INFO	onConnect: client[#108@0 #21213]
+[2018-01-09 01:04:30]	INFO	Offline: 108
+[2018-01-09 01:04:30]	INFO	onClose: client[#108@-1 #21213]
+[2018-01-09 01:04:30]	INFO	onConnect: client[#109@0 #21213]
+[2018-01-09 01:04:30]	INFO	Offline: 109
+[2018-01-09 01:04:30]	INFO	onClose: client[#109@-1 #21213]
+[2018-01-09 01:04:30]	INFO	onConnect: client[#110@0 #21213]
+[2018-01-09 01:04:30]	INFO	Offline: 110
+[2018-01-09 01:04:30]	INFO	onClose: client[#110@-1 #21213]
+[2018-01-09 01:04:31]	INFO	onConnect: client[#111@0 #21213]
+[2018-01-09 01:04:31]	INFO	Offline: 111
+[2018-01-09 01:04:31]	INFO	onClose: client[#111@-1 #21213]
+[2018-01-09 01:04:31]	INFO	onConnect: client[#112@0 #21213]
+[2018-01-09 01:04:31]	INFO	Offline: 112
+[2018-01-09 01:04:31]	INFO	onClose: client[#112@-1 #21213]
+[2018-01-09 01:04:31]	INFO	onConnect: client[#113@0 #21213]
+[2018-01-09 01:04:31]	INFO	Offline: 113
+[2018-01-09 01:04:31]	INFO	onClose: client[#113@-1 #21213]
+[2018-01-09 01:04:32]	INFO	onConnect: client[#114@0 #21213]
+[2018-01-09 01:04:32]	INFO	Offline: 114
+[2018-01-09 01:04:32]	INFO	onClose: client[#114@-1 #21213]
+[2018-01-09 01:04:32]	INFO	onConnect: client[#115@0 #21213]
+[2018-01-09 01:04:32]	INFO	Offline: 115
+[2018-01-09 01:04:32]	INFO	onClose: client[#115@-1 #21213]
+[2018-01-09 01:04:32]	INFO	onConnect: client[#116@0 #21213]
+[2018-01-09 01:04:32]	INFO	Offline: 116
+[2018-01-09 01:04:32]	INFO	onClose: client[#116@-1 #21213]
+[2018-01-09 01:04:33]	INFO	onConnect: client[#117@0 #21213]
+[2018-01-09 01:04:33]	INFO	Offline: 117
+[2018-01-09 01:04:33]	INFO	onClose: client[#117@-1 #21213]
+[2018-01-09 01:04:34]	INFO	onConnect: client[#118@0 #21213]
+[2018-01-09 01:04:34]	INFO	Offline: 118
+[2018-01-09 01:04:34]	INFO	onClose: client[#118@-1 #21213]
+[2018-01-09 01:04:34]	INFO	onConnect: client[#119@0 #21213]
+[2018-01-09 01:04:34]	INFO	Offline: 119
+[2018-01-09 01:04:34]	INFO	onClose: client[#119@-1 #21213]
+[2018-01-09 01:04:35]	INFO	onConnect: client[#120@0 #21213]
+[2018-01-09 01:04:35]	INFO	Offline: 120
+[2018-01-09 01:04:35]	INFO	onClose: client[#120@-1 #21213]
+[2018-01-09 01:04:36]	INFO	onConnect: client[#121@0 #21213]
+[2018-01-09 01:04:36]	INFO	Offline: 121
+[2018-01-09 01:04:36]	INFO	onClose: client[#121@-1 #21213]
+[2018-01-09 01:04:36]	INFO	onConnect: client[#122@0 #21213]
+[2018-01-09 01:04:36]	INFO	Offline: 122
+[2018-01-09 01:04:36]	INFO	onClose: client[#122@-1 #21213]
+[2018-01-09 01:04:36]	INFO	onConnect: client[#123@0 #21213]
+[2018-01-09 01:04:37]	INFO	Offline: 123
+[2018-01-09 01:04:37]	INFO	onClose: client[#123@-1 #21213]
+[2018-01-09 01:04:37]	INFO	onConnect: client[#124@0 #21213]
+[2018-01-09 01:04:37]	INFO	Offline: 124
+[2018-01-09 01:04:37]	INFO	onClose: client[#124@-1 #21213]
+[2018-01-09 01:04:37]	INFO	onConnect: client[#125@0 #21213]
+[2018-01-09 01:04:37]	INFO	Offline: 125
+[2018-01-09 01:04:37]	INFO	onClose: client[#125@-1 #21213]
+[2018-01-09 01:04:37]	INFO	onConnect: client[#126@0 #21213]
+[2018-01-09 01:04:37]	INFO	Offline: 126
+[2018-01-09 01:04:37]	INFO	onClose: client[#126@-1 #21213]
+[2018-01-09 01:04:38]	INFO	onConnect: client[#127@0 #21213]
+[2018-01-09 01:04:38]	INFO	Offline: 127
+[2018-01-09 01:04:38]	INFO	onClose: client[#127@-1 #21213]
+[2018-01-09 01:04:38]	INFO	onConnect: client[#128@0 #21213]
+[2018-01-09 01:04:38]	INFO	Offline: 128
+[2018-01-09 01:04:38]	INFO	onClose: client[#128@-1 #21213]
+[2018-01-09 01:04:38]	INFO	onConnect: client[#129@0 #21213]
+[2018-01-09 01:04:38]	INFO	Offline: 129
+[2018-01-09 01:04:38]	INFO	onClose: client[#129@-1 #21213]
+[2018-01-09 01:04:39]	INFO	onConnect: client[#130@0 #21213]
+[2018-01-09 01:04:39]	INFO	Offline: 130
+[2018-01-09 01:04:39]	INFO	onClose: client[#130@-1 #21213]
+[2018-01-09 01:04:39]	INFO	onConnect: client[#131@0 #21213]
+[2018-01-09 01:04:39]	INFO	Offline: 131
+[2018-01-09 01:04:39]	INFO	onClose: client[#131@-1 #21213]
+[2018-01-09 01:04:39]	INFO	onConnect: client[#132@0 #21213]
+[2018-01-09 01:04:39]	INFO	Offline: 132
+[2018-01-09 01:04:39]	INFO	onClose: client[#132@-1 #21213]
+[2018-01-09 01:04:40]	INFO	onConnect: client[#133@0 #21213]
+[2018-01-09 01:04:40]	INFO	Offline: 133
+[2018-01-09 01:04:40]	INFO	onClose: client[#133@-1 #21213]
+[2018-01-09 01:04:40]	INFO	onConnect: client[#134@0 #21213]
+[2018-01-09 01:04:40]	INFO	Offline: 134
+[2018-01-09 01:04:40]	INFO	onClose: client[#134@-1 #21213]
+[2018-01-09 01:04:40]	INFO	onConnect: client[#135@0 #21213]
+[2018-01-09 01:04:40]	INFO	Offline: 135
+[2018-01-09 01:04:40]	INFO	onClose: client[#135@-1 #21213]
+[2018-01-09 01:04:40]	INFO	onConnect: client[#136@0 #21213]
+[2018-01-09 01:04:40]	INFO	Offline: 136
+[2018-01-09 01:04:40]	INFO	onClose: client[#136@-1 #21213]
+[2018-01-09 01:04:41]	INFO	onConnect: client[#137@0 #21213]
+[2018-01-09 01:04:41]	INFO	Offline: 137
+[2018-01-09 01:04:41]	INFO	onClose: client[#137@-1 #21213]
+[2018-01-09 01:04:41]	INFO	onConnect: client[#138@0 #21213]
+[2018-01-09 01:04:41]	INFO	Offline: 138
+[2018-01-09 01:04:41]	INFO	onClose: client[#138@-1 #21213]
+[2018-01-09 01:04:41]	INFO	onConnect: client[#139@0 #21213]
+[2018-01-09 01:04:41]	INFO	Offline: 139
+[2018-01-09 01:04:41]	INFO	onClose: client[#139@-1 #21213]
+[2018-01-09 01:04:42]	INFO	onConnect: client[#140@0 #21213]
+[2018-01-09 01:04:42]	INFO	Offline: 140
+[2018-01-09 01:04:42]	INFO	onClose: client[#140@-1 #21213]
+[2018-01-09 01:04:45]	INFO	onConnect: client[#141@0 #21213]
+[2018-01-09 01:04:45]	INFO	Offline: 141
+[2018-01-09 01:04:45]	INFO	onClose: client[#141@-1 #21213]
+[2018-01-09 01:04:45]	INFO	onConnect: client[#142@0 #21213]
+[2018-01-09 01:04:45]	INFO	Offline: 142
+[2018-01-09 01:04:45]	INFO	onClose: client[#142@-1 #21213]
+[2018-01-09 01:04:46]	INFO	onConnect: client[#143@0 #21213]
+[2018-01-09 01:04:46]	INFO	Offline: 143
+[2018-01-09 01:04:46]	INFO	onClose: client[#143@-1 #21213]
+[2018-01-09 01:04:46]	INFO	onConnect: client[#144@0 #21213]
+[2018-01-09 01:04:46]	INFO	Offline: 144
+[2018-01-09 01:04:46]	INFO	onClose: client[#144@-1 #21213]
+[2018-01-09 01:04:46]	INFO	onConnect: client[#145@0 #21213]
+[2018-01-09 01:04:46]	INFO	Offline: 145
+[2018-01-09 01:04:46]	INFO	onClose: client[#145@-1 #21213]
+[2018-01-09 01:04:47]	INFO	onConnect: client[#146@0 #21213]
+[2018-01-09 01:04:47]	INFO	Offline: 146
+[2018-01-09 01:04:47]	INFO	onClose: client[#146@-1 #21213]
+[2018-01-09 01:04:47]	INFO	onConnect: client[#147@0 #21213]
+[2018-01-09 01:04:47]	INFO	Offline: 147
+[2018-01-09 01:04:47]	INFO	onClose: client[#147@-1 #21213]
+[2018-01-09 01:04:47]	INFO	onConnect: client[#148@0 #21213]
+[2018-01-09 01:04:47]	INFO	Offline: 148
+[2018-01-09 01:04:47]	INFO	onClose: client[#148@-1 #21213]
+[2018-01-09 01:04:47]	INFO	onConnect: client[#149@0 #21213]
+[2018-01-09 01:04:47]	INFO	Offline: 149
+[2018-01-09 01:04:47]	INFO	onClose: client[#149@-1 #21213]
+[2018-01-09 01:04:48]	INFO	onConnect: client[#150@0 #21213]
+[2018-01-09 01:04:48]	INFO	Offline: 150
+[2018-01-09 01:04:48]	INFO	onClose: client[#150@-1 #21213]
+[2018-01-09 01:04:48]	INFO	onConnect: client[#151@0 #21213]
+[2018-01-09 01:04:48]	INFO	Offline: 151
+[2018-01-09 01:04:48]	INFO	onClose: client[#151@-1 #21213]
+[2018-01-09 01:04:49]	INFO	onConnect: client[#152@0 #21213]
+[2018-01-09 01:04:49]	INFO	Offline: 152
+[2018-01-09 01:04:49]	INFO	onClose: client[#152@-1 #21213]
+[2018-01-09 01:04:50]	INFO	onConnect: client[#153@0 #21213]
+[2018-01-09 01:04:50]	INFO	Offline: 153
+[2018-01-09 01:04:50]	INFO	onClose: client[#153@-1 #21213]
+[2018-01-09 01:04:50]	INFO	onConnect: client[#154@0 #21213]
+[2018-01-09 01:04:50]	INFO	Offline: 154
+[2018-01-09 01:04:50]	INFO	onClose: client[#154@-1 #21213]
+[2018-01-09 01:04:50]	INFO	onConnect: client[#155@0 #21213]
+[2018-01-09 01:04:50]	INFO	Offline: 155
+[2018-01-09 01:04:50]	INFO	onClose: client[#155@-1 #21213]
+[2018-01-09 01:04:51]	INFO	onConnect: client[#156@0 #21213]
+[2018-01-09 01:04:51]	INFO	Offline: 156
+[2018-01-09 01:04:51]	INFO	onClose: client[#156@-1 #21213]
+[2018-01-09 01:04:52]	INFO	onConnect: client[#157@0 #21213]
+[2018-01-09 01:04:52]	INFO	Offline: 157
+[2018-01-09 01:04:52]	INFO	onClose: client[#157@-1 #21213]
+[2018-01-09 01:04:52]	INFO	onConnect: client[#158@0 #21213]
+[2018-01-09 01:04:52]	INFO	Offline: 158
+[2018-01-09 01:04:52]	INFO	onClose: client[#158@-1 #21213]
+[2018-01-09 01:04:52]	INFO	onConnect: client[#159@0 #21213]
+[2018-01-09 01:04:52]	INFO	Offline: 159
+[2018-01-09 01:04:52]	INFO	onClose: client[#159@-1 #21213]
+[2018-01-09 01:04:54]	INFO	onConnect: client[#160@0 #21213]
+[2018-01-09 01:04:54]	INFO	Offline: 160
+[2018-01-09 01:04:54]	INFO	onClose: client[#160@-1 #21213]
+[2018-01-09 01:04:54]	INFO	onConnect: client[#161@0 #21213]
+[2018-01-09 01:04:54]	INFO	Offline: 161
+[2018-01-09 01:04:54]	INFO	onClose: client[#161@-1 #21213]
+[2018-01-09 01:04:54]	INFO	onConnect: client[#162@0 #21213]
+[2018-01-09 01:04:54]	INFO	Offline: 162
+[2018-01-09 01:04:54]	INFO	onClose: client[#162@-1 #21213]
+[2018-01-09 01:04:55]	INFO	onConnect: client[#163@0 #21213]
+[2018-01-09 01:04:55]	INFO	Offline: 163
+[2018-01-09 01:04:55]	INFO	onClose: client[#163@-1 #21213]
+[2018-01-09 01:04:55]	INFO	onConnect: client[#164@0 #21213]
+[2018-01-09 01:04:55]	INFO	Offline: 164
+[2018-01-09 01:04:55]	INFO	onClose: client[#164@-1 #21213]
+[2018-01-09 01:04:55]	INFO	onConnect: client[#165@0 #21213]
+[2018-01-09 01:04:55]	INFO	Offline: 165
+[2018-01-09 01:04:55]	INFO	onClose: client[#165@-1 #21213]
+[2018-01-09 01:04:56]	INFO	onConnect: client[#166@0 #21213]
+[2018-01-09 01:04:56]	INFO	Offline: 166
+[2018-01-09 01:04:56]	INFO	onClose: client[#166@-1 #21213]
+[2018-01-09 01:04:57]	INFO	onConnect: client[#167@0 #21213]
+[2018-01-09 01:04:57]	INFO	Offline: 167
+[2018-01-09 01:04:57]	INFO	onClose: client[#167@-1 #21213]
+[2018-01-09 01:04:57]	INFO	onConnect: client[#168@0 #21213]
+[2018-01-09 01:04:57]	INFO	Offline: 168
+[2018-01-09 01:04:57]	INFO	onClose: client[#168@-1 #21213]
+[2018-01-09 01:04:58]	INFO	onConnect: client[#169@0 #21213]
+[2018-01-09 01:04:58]	INFO	Offline: 169
+[2018-01-09 01:04:58]	INFO	onClose: client[#169@-1 #21213]
+[2018-01-09 01:04:58]	INFO	onConnect: client[#170@0 #21213]
+[2018-01-09 01:04:58]	INFO	Offline: 170
+[2018-01-09 01:04:58]	INFO	onClose: client[#170@-1 #21213]
+[2018-01-09 01:04:58]	INFO	onConnect: client[#171@0 #21213]
+[2018-01-09 01:04:58]	INFO	Offline: 171
+[2018-01-09 01:04:58]	INFO	onClose: client[#171@-1 #21213]
+[2018-01-09 01:05:00]	INFO	onConnect: client[#172@0 #21213]
+[2018-01-09 01:05:00]	INFO	Offline: 172
+[2018-01-09 01:05:00]	INFO	onClose: client[#172@-1 #21213]
+[2018-01-09 01:05:00]	INFO	onConnect: client[#173@0 #21213]
+[2018-01-09 01:05:00]	INFO	Offline: 173
+[2018-01-09 01:05:00]	INFO	onClose: client[#173@-1 #21213]
+[2018-01-09 01:05:00]	INFO	onConnect: client[#174@0 #21213]
+[2018-01-09 01:05:00]	INFO	Offline: 174
+[2018-01-09 01:05:00]	INFO	onClose: client[#174@-1 #21213]
+[2018-01-09 01:05:00]	INFO	onConnect: client[#175@0 #21213]
+[2018-01-09 01:05:00]	INFO	Offline: 175
+[2018-01-09 01:05:00]	INFO	onClose: client[#175@-1 #21213]
+[2018-01-09 01:05:01]	INFO	onConnect: client[#176@0 #21213]
+[2018-01-09 01:05:01]	INFO	Offline: 176
+[2018-01-09 01:05:01]	INFO	onClose: client[#176@-1 #21213]
+[2018-01-09 01:05:01]	INFO	onConnect: client[#177@0 #21213]
+[2018-01-09 01:05:01]	INFO	Offline: 177
+[2018-01-09 01:05:01]	INFO	onClose: client[#177@-1 #21213]
+[2018-01-09 01:05:01]	INFO	onConnect: client[#178@0 #21213]
+[2018-01-09 01:05:01]	INFO	Offline: 178
+[2018-01-09 01:05:01]	INFO	onClose: client[#178@-1 #21213]
+[2018-01-09 01:05:02]	INFO	onConnect: client[#179@0 #21213]
+[2018-01-09 01:05:02]	INFO	Offline: 179
+[2018-01-09 01:05:02]	INFO	onClose: client[#179@-1 #21213]
+[2018-01-09 01:05:03]	INFO	onConnect: client[#180@0 #21213]
+[2018-01-09 01:05:03]	INFO	Offline: 180
+[2018-01-09 01:05:03]	INFO	onClose: client[#180@-1 #21213]
+[2018-01-09 01:05:03]	INFO	onConnect: client[#181@0 #21213]
+[2018-01-09 01:05:03]	INFO	Offline: 181
+[2018-01-09 01:05:03]	INFO	onClose: client[#181@-1 #21213]
+[2018-01-09 01:05:04]	INFO	onConnect: client[#182@0 #21213]
+[2018-01-09 01:05:04]	INFO	Offline: 182
+[2018-01-09 01:05:04]	INFO	onClose: client[#182@-1 #21213]
+[2018-01-09 01:05:04]	INFO	onConnect: client[#183@0 #21213]
+[2018-01-09 01:05:04]	INFO	Offline: 183
+[2018-01-09 01:05:04]	INFO	onClose: client[#183@-1 #21213]
+[2018-01-09 01:05:05]	INFO	onConnect: client[#184@0 #21213]
+[2018-01-09 01:05:05]	INFO	Offline: 184
+[2018-01-09 01:05:05]	INFO	onClose: client[#184@-1 #21213]
+[2018-01-09 01:05:06]	INFO	onConnect: client[#185@0 #21213]
+[2018-01-09 01:05:06]	INFO	Offline: 185
+[2018-01-09 01:05:06]	INFO	onClose: client[#185@-1 #21213]
+[2018-01-09 03:35:21]	INFO	onConnect: client[#186@0 #21213]
+[2018-01-09 03:35:21]	INFO	onConnect: client[#187@0 #21213]
+[2018-01-09 03:35:25]	INFO	onConnect: client[#188@0 #21213]
+[2018-01-09 03:35:25]	INFO	Offline: 187
+[2018-01-09 03:35:25]	INFO	onClose: client[#187@0 #21213]
+[2018-01-09 03:35:29]	INFO	Offline: 188
+[2018-01-09 03:35:29]	INFO	onClose: client[#188@0 #21213]
+[2018-01-09 03:35:33]	INFO	onConnect: client[#189@0 #21213]
+[2018-01-09 03:35:33]	INFO	Offline: 186
+[2018-01-09 03:35:33]	INFO	onClose: client[#186@0 #21213]
+[2018-01-09 03:35:35]	INFO	onConnect: client[#190@0 #21213]
+[2018-01-09 03:35:58]	INFO	Offline: 190
+[2018-01-09 03:35:58]	INFO	onClose: client[#190@0 #21213]
+[2018-01-09 03:40:42]	INFO	Offline: 189
+[2018-01-09 03:40:42]	INFO	onClose: client[#189@0 #21213]
+[2018-01-09 03:43:38]	INFO	onConnect: client[#191@0 #21213]
+[2018-01-09 03:43:38]	INFO	wait request data. fd=191
+[2018-01-09 03:43:41]	INFO	Offline: 191
+[2018-01-09 03:43:41]	INFO	onClose: client[#191@0 #21213]
+[2018-01-09 05:17:48]	INFO	onConnect: client[#192@0 #21213]
+[2018-01-09 05:17:49]	INFO	Offline: 192
+[2018-01-09 05:17:49]	INFO	onClose: client[#192@-1 #21213]
+[2018-01-09 05:42:47]	INFO	onConnect: client[#193@0 #21213]
+[2018-01-09 05:42:47]	INFO	Offline: 193
+[2018-01-09 05:42:47]	INFO	onClose: client[#193@-1 #21213]
+[2018-01-09 05:45:05]	INFO	onConnect: client[#194@0 #21213]
+[2018-01-09 05:45:05]	INFO	Offline: 194
+[2018-01-09 05:45:05]	INFO	onClose: client[#194@-1 #21213]
+[2018-01-09 05:46:25]	INFO	onConnect: client[#195@0 #21213]
+[2018-01-09 05:46:25]	INFO	Offline: 195
+[2018-01-09 05:46:25]	INFO	onClose: client[#195@-1 #21213]
+[2018-01-09 05:47:18]	INFO	onConnect: client[#196@0 #21213]
+[2018-01-09 05:47:18]	INFO	Offline: 196
+[2018-01-09 05:47:18]	INFO	onClose: client[#196@-1 #21213]
+[2018-01-09 06:12:32]	INFO	onConnect: client[#197@0 #21213]
+[2018-01-09 06:12:42]	INFO	Offline: 197
+[2018-01-09 06:12:42]	INFO	onClose: client[#197@0 #21213]
+[2018-01-09 08:51:47]	INFO	onConnect: client[#198@0 #21213]
+[2018-01-09 08:53:47]	INFO	Offline: 198
+[2018-01-09 08:53:47]	INFO	onClose: client[#198@0 #21213]
+[2018-01-09 08:55:08]	INFO	onConnect: client[#199@0 #21213]
+[2018-01-09 08:55:09]	INFO	Offline: 199
+[2018-01-09 08:55:09]	INFO	onClose: client[#199@0 #21213]
+[2018-01-09 11:31:27]	INFO	onConnect: client[#200@0 #21213]
+[2018-01-09 11:31:27]	INFO	wait request data. fd=200
+[2018-01-09 11:31:30]	INFO	Offline: 200
+[2018-01-09 11:31:30]	INFO	onClose: client[#200@0 #21213]
+[2018-01-09 11:31:30]	INFO	onConnect: client[#201@0 #21213]
+[2018-01-09 11:31:33]	INFO	Offline: 201
+[2018-01-09 11:31:33]	INFO	onClose: client[#201@0 #21213]
+[2018-01-09 11:31:33]	INFO	onConnect: client[#202@0 #21213]
+[2018-01-09 11:31:36]	INFO	wait request data. fd=202
+[2018-01-09 11:31:39]	INFO	Offline: 202
+[2018-01-09 11:31:39]	INFO	onClose: client[#202@0 #21213]
+[2018-01-09 11:31:39]	INFO	onConnect: client[#203@0 #21213]
+[2018-01-09 11:31:39]	INFO	Offline: 203
+[2018-01-09 11:31:39]	INFO	onClose: client[#203@-1 #21213]
+[2018-01-09 13:28:35]	INFO	onConnect: client[#204@0 #21213]
+[2018-01-09 13:28:35]	INFO	Offline: 204
+[2018-01-09 13:28:35]	INFO	onClose: client[#204@0 #21213]
+[2018-01-09 17:02:15]	INFO	onConnect: client[#205@0 #21213]
+[2018-01-09 17:02:15]	INFO	Offline: 205
+[2018-01-09 17:02:15]	INFO	onClose: client[#205@-1 #21213]
+[2018-01-09 18:45:51]	INFO	onConnect: client[#206@0 #21213]
+[2018-01-09 18:51:50]	INFO	Offline: 206
+[2018-01-09 18:51:50]	INFO	onClose: client[#206@0 #21213]
+[2018-01-09 20:19:56]	INFO	onConnect: client[#207@0 #21213]
+[2018-01-09 20:19:58]	INFO	Offline: 207
+[2018-01-09 20:19:58]	INFO	onClose: client[#207@-1 #21213]
+[2018-01-09 20:57:13]	INFO	onConnect: client[#208@0 #21213]
+[2018-01-09 20:57:13]	INFO	Offline: 208
+[2018-01-09 20:57:13]	INFO	onClose: client[#208@-1 #21213]
+[2018-01-09 21:09:36]	INFO	onConnect: client[#209@0 #21213]
+[2018-01-09 21:11:30]	INFO	Offline: 209
+[2018-01-09 21:11:30]	INFO	onClose: client[#209@0 #21213]
+[2018-01-09 23:36:17]	INFO	onConnect: client[#210@0 #21213]
+[2018-01-09 23:37:43]	INFO	Offline: 210
+[2018-01-09 23:37:43]	INFO	onClose: client[#210@0 #21213]
+[2018-01-10 00:50:26]	INFO	onConnect: client[#211@0 #21213]
+[2018-01-10 00:50:26]	INFO	wait request data. fd=211
+[2018-01-10 00:50:36]	INFO	Offline: 211
+[2018-01-10 00:50:36]	INFO	onClose: client[#211@0 #21213]
+[2018-01-10 01:09:20]	INFO	onConnect: client[#212@0 #21213]
+[2018-01-10 01:09:20]	INFO	Offline: 212
+[2018-01-10 01:09:20]	INFO	onClose: client[#212@-1 #21213]
+[2018-01-10 01:15:33]	INFO	onConnect: client[#213@0 #21213]
+[2018-01-10 01:15:33]	INFO	Offline: 213
+[2018-01-10 01:15:33]	INFO	onClose: client[#213@-1 #21213]
+[2018-01-10 01:22:25]	INFO	onConnect: client[#214@0 #21213]
+[2018-01-10 01:22:27]	INFO	Offline: 214
+[2018-01-10 01:22:27]	INFO	onClose: client[#214@-1 #21213]
+[2018-01-10 06:15:23]	INFO	onConnect: client[#215@0 #21213]
+[2018-01-10 06:15:31]	INFO	Offline: 215
+[2018-01-10 06:15:31]	INFO	onClose: client[#215@0 #21213]
+[2018-01-10 06:33:25]	INFO	onConnect: client[#216@0 #21213]
+[2018-01-10 06:33:25]	INFO	Offline: 216
+[2018-01-10 06:33:25]	INFO	onClose: client[#216@-1 #21213]
+[2018-01-10 07:39:57]	INFO	onConnect: client[#217@0 #21213]
+[2018-01-10 07:39:57]	INFO	parseHeader failed. header=GET / HTTP/1.1
+[2018-01-10 07:39:57]	INFO	wait request data. fd=217
+[2018-01-10 07:40:13]	INFO	Offline: 217
+[2018-01-10 07:40:13]	INFO	onClose: client[#217@0 #21213]
+[2018-01-10 08:46:31]	INFO	onConnect: client[#218@0 #21213]
+[2018-01-10 08:46:33]	INFO	Offline: 218
+[2018-01-10 08:46:33]	INFO	onClose: client[#218@-1 #21213]
+[2018-01-10 08:46:38]	INFO	onConnect: client[#219@0 #21213]
+[2018-01-10 08:46:41]	INFO	Offline: 219
+[2018-01-10 08:46:41]	INFO	onClose: client[#219@-1 #21213]
+[2018-01-10 09:59:09]	INFO	onConnect: client[#220@0 #21213]
+[2018-01-10 10:00:18]	INFO	Offline: 220
+[2018-01-10 10:00:18]	INFO	onClose: client[#220@0 #21213]
+[2018-01-10 10:07:10]	INFO	onConnect: client[#221@0 #21213]
+[2018-01-10 10:07:12]	INFO	Offline: 221
+[2018-01-10 10:07:12]	INFO	onClose: client[#221@0 #21213]
+[2018-01-10 10:40:43]	INFO	onConnect: client[#222@0 #21213]
+[2018-01-10 10:40:43]	INFO	parseHeader failed. header=GET / HTTP/1.1
+[2018-01-10 10:40:43]	INFO	wait request data. fd=222
+[2018-01-10 10:40:59]	INFO	Offline: 222
+[2018-01-10 10:40:59]	INFO	onClose: client[#222@0 #21213]
+[2018-01-10 13:24:51]	INFO	onConnect: client[#223@0 #21213]
+[2018-01-10 13:24:51]	INFO	Offline: 223
+[2018-01-10 13:24:51]	INFO	onClose: client[#223@-1 #21213]
+[2018-01-10 14:13:14]	INFO	onConnect: client[#224@0 #21213]
+[2018-01-10 14:13:20]	INFO	parseHeader failed. header=GET / HTTP/1.0
+[2018-01-10 14:13:20]	INFO	wait request data. fd=224
+[2018-01-10 14:13:25]	INFO	Offline: 224
+[2018-01-10 14:13:25]	INFO	onClose: client[#224@0 #21213]
+[2018-01-10 14:13:26]	INFO	onConnect: client[#225@0 #21213]
+[2018-01-10 14:13:26]	INFO	parseHeader failed. header=OPTIONS / HTTP/1.0
+[2018-01-10 14:13:26]	INFO	wait request data. fd=225
+[2018-01-10 14:13:31]	INFO	Offline: 225
+[2018-01-10 14:13:31]	INFO	onClose: client[#225@0 #21213]
+[2018-01-10 14:13:31]	INFO	onConnect: client[#226@0 #21213]
+[2018-01-10 14:13:31]	INFO	parseHeader failed. header=OPTIONS / RTSP/1.0
+[2018-01-10 14:13:31]	INFO	wait request data. fd=226
+[2018-01-10 14:13:36]	INFO	Offline: 226
+[2018-01-10 14:13:36]	INFO	onClose: client[#226@0 #21213]
+[2018-01-10 14:13:36]	INFO	onConnect: client[#227@0 #21213]
+[2018-01-10 14:13:36]	INFO	wait request data. fd=227
+[2018-01-10 14:13:41]	INFO	Offline: 227
+[2018-01-10 14:13:41]	INFO	onClose: client[#227@0 #21213]
+[2018-01-10 14:13:41]	INFO	onConnect: client[#228@0 #21213]
+[2018-01-10 14:13:41]	INFO	parseHeader failed. header=GET /nice%20ports%2C/Tri%6Eity.txt%2ebak HTTP/1.0
+[2018-01-10 14:13:41]	INFO	wait request data. fd=228
+[2018-01-10 14:13:46]	INFO	Offline: 228
+[2018-01-10 14:13:46]	INFO	onClose: client[#228@0 #21213]
+[2018-01-10 14:13:46]	INFO	onConnect: client[#229@0 #21213]
+[2018-01-10 14:13:46]	INFO	parseHeader failed. header=
+[2018-01-10 14:13:46]	INFO	wait request data. fd=229
+[2018-01-10 14:13:51]	INFO	Offline: 229
+[2018-01-10 14:13:51]	INFO	onClose: client[#229@0 #21213]
+[2018-01-10 14:13:51]	INFO	onConnect: client[#230@0 #21213]
+[2018-01-10 14:13:51]	INFO	wait request data. fd=230
+[2018-01-10 14:13:56]	INFO	Offline: 230
+[2018-01-10 14:13:56]	INFO	onClose: client[#230@0 #21213]
+[2018-01-10 14:13:56]	INFO	onConnect: client[#231@0 #21213]
+[2018-01-10 14:13:56]	INFO	wait request data. fd=231
+[2018-01-10 14:14:01]	INFO	Offline: 231
+[2018-01-10 14:14:01]	INFO	onClose: client[#231@0 #21213]
+[2018-01-10 14:14:02]	INFO	onConnect: client[#232@0 #21213]
+[2018-01-10 14:14:02]	INFO	wait request data. fd=232
+[2018-01-10 14:14:07]	INFO	Offline: 232
+[2018-01-10 14:14:07]	INFO	onClose: client[#232@0 #21213]
+[2018-01-10 14:14:07]	INFO	onConnect: client[#233@0 #21213]
+[2018-01-10 14:14:07]	INFO	wait request data. fd=233
+[2018-01-10 14:14:14]	INFO	Offline: 233
+[2018-01-10 14:14:14]	INFO	onClose: client[#233@0 #21213]
+[2018-01-10 14:14:14]	INFO	onConnect: client[#234@0 #21213]
+[2018-01-10 14:14:14]	INFO	wait request data. fd=234
+[2018-01-10 14:14:19]	INFO	Offline: 234
+[2018-01-10 14:14:19]	INFO	onClose: client[#234@0 #21213]
+[2018-01-10 14:14:19]	INFO	onConnect: client[#235@0 #21213]
+[2018-01-10 14:14:19]	INFO	wait request data. fd=235
+[2018-01-10 14:14:24]	INFO	Offline: 235
+[2018-01-10 14:14:24]	INFO	onClose: client[#235@0 #21213]
+[2018-01-10 14:14:25]	INFO	onConnect: client[#236@0 #21213]
+[2018-01-10 14:14:25]	INFO	wait request data. fd=236
+[2018-01-10 14:14:30]	INFO	Offline: 236
+[2018-01-10 14:14:30]	INFO	onClose: client[#236@0 #21213]
+[2018-01-10 14:14:30]	INFO	onConnect: client[#237@0 #21213]
+[2018-01-10 14:14:30]	INFO	wait request data. fd=237
+[2018-01-10 14:14:35]	INFO	Offline: 237
+[2018-01-10 14:14:35]	INFO	onClose: client[#237@0 #21213]
+[2018-01-10 14:14:35]	INFO	onConnect: client[#238@0 #21213]
+[2018-01-10 14:14:35]	INFO	wait request data. fd=238
+[2018-01-10 14:14:40]	INFO	Offline: 238
+[2018-01-10 14:14:40]	INFO	onClose: client[#238@0 #21213]
+[2018-01-10 14:14:40]	INFO	onConnect: client[#239@0 #21213]
+[2018-01-10 14:14:40]	INFO	wait request data. fd=239
+[2018-01-10 14:14:45]	INFO	Offline: 239
+[2018-01-10 14:14:45]	INFO	onClose: client[#239@0 #21213]
+[2018-01-10 14:14:45]	INFO	onConnect: client[#240@0 #21213]
+[2018-01-10 14:14:45]	INFO	wait request data. fd=240
+[2018-01-10 14:14:50]	INFO	Offline: 240
+[2018-01-10 14:14:50]	INFO	onClose: client[#240@0 #21213]
+[2018-01-10 14:14:50]	INFO	onConnect: client[#241@0 #21213]
+[2018-01-10 14:14:50]	INFO	Offline: 241
+[2018-01-10 14:14:50]	INFO	onClose: client[#241@-1 #21213]
+[2018-01-10 14:14:51]	INFO	onConnect: client[#242@0 #21213]
+[2018-01-10 14:14:51]	INFO	wait request data. fd=242
+[2018-01-10 14:14:56]	INFO	Offline: 242
+[2018-01-10 14:14:56]	INFO	onClose: client[#242@0 #21213]
+[2018-01-10 14:14:56]	INFO	onConnect: client[#243@0 #21213]
+[2018-01-10 14:14:56]	INFO	wait request data. fd=243
+[2018-01-10 14:15:01]	INFO	Offline: 243
+[2018-01-10 14:15:01]	INFO	onClose: client[#243@0 #21213]
+[2018-01-10 14:15:01]	INFO	onConnect: client[#244@0 #21213]
+[2018-01-10 14:15:01]	INFO	wait request data. fd=244
+[2018-01-10 14:15:06]	INFO	Offline: 244
+[2018-01-10 14:15:06]	INFO	onClose: client[#244@0 #21213]
+[2018-01-10 14:15:06]	INFO	onConnect: client[#245@0 #21213]
+[2018-01-10 14:15:06]	INFO	wait request data. fd=245
+[2018-01-10 14:15:11]	INFO	Offline: 245
+[2018-01-10 14:15:11]	INFO	onClose: client[#245@0 #21213]
+[2018-01-10 14:15:11]	INFO	onConnect: client[#246@0 #21213]
+[2018-01-10 14:15:11]	INFO	wait request data. fd=246
+[2018-01-10 14:15:16]	INFO	Offline: 246
+[2018-01-10 14:15:16]	INFO	onClose: client[#246@0 #21213]
+[2018-01-10 15:13:42]	INFO	onConnect: client[#247@0 #21213]
+[2018-01-10 15:13:42]	INFO	Offline: 247
+[2018-01-10 15:13:42]	INFO	onClose: client[#247@-1 #21213]
+[2018-01-10 19:28:04]	INFO	onConnect: client[#248@0 #21213]
+[2018-01-10 19:28:04]	INFO	Offline: 248
+[2018-01-10 19:28:04]	INFO	onClose: client[#248@-1 #21213]
+[2018-01-10 19:59:18]	INFO	onConnect: client[#249@0 #21213]
+[2018-01-10 19:59:18]	INFO	Offline: 249
+[2018-01-10 19:59:18]	INFO	onClose: client[#249@-1 #21213]
+[2018-01-10 21:58:54]	INFO	onConnect: client[#250@0 #21213]
+[2018-01-10 21:58:54]	INFO	Offline: 250
+[2018-01-10 21:58:54]	INFO	onClose: client[#250@-1 #21213]
+[2018-01-10 22:32:07]	INFO	onConnect: client[#251@0 #21213]
+[2018-01-10 22:32:07]	INFO	wait request data. fd=251
+[2018-01-10 22:32:37]	INFO	Offline: 251
+[2018-01-10 22:32:37]	INFO	onClose: client[#251@0 #21213]
+[2018-01-10 23:52:01]	INFO	onConnect: client[#252@0 #21213]
+[2018-01-10 23:52:01]	INFO	wait request data. fd=252
+[2018-01-10 23:59:17]	INFO	Offline: 252
+[2018-01-10 23:59:17]	INFO	onClose: client[#252@0 #21213]
+[2018-01-11 00:14:13]	INFO	onConnect: client[#253@0 #21213]
+[2018-01-11 00:14:23]	INFO	Offline: 253
+[2018-01-11 00:14:23]	INFO	onClose: client[#253@0 #21213]
+[2018-01-11 03:56:40]	INFO	onConnect: client[#254@0 #21213]
+[2018-01-11 03:56:40]	INFO	Offline: 254
+[2018-01-11 03:56:40]	INFO	onClose: client[#254@-1 #21213]
+[2018-01-11 03:58:15]	INFO	onConnect: client[#255@0 #21213]
+[2018-01-11 03:58:15]	INFO	Offline: 255
+[2018-01-11 03:58:15]	INFO	onClose: client[#255@0 #21213]
+[2018-01-11 06:28:32]	INFO	onConnect: client[#256@0 #21213]
+[2018-01-11 06:28:40]	INFO	Offline: 256
+[2018-01-11 06:28:40]	INFO	onClose: client[#256@0 #21213]
+[2018-01-11 08:00:09]	INFO	onConnect: client[#257@0 #21213]
+[2018-01-11 08:00:09]	INFO	Offline: 257
+[2018-01-11 08:00:09]	INFO	onClose: client[#257@0 #21213]
+[2018-01-11 08:44:16]	INFO	onConnect: client[#258@0 #21213]
+[2018-01-11 08:44:16]	INFO	parseHeader failed. header=GET / HTTP/1.1
+[2018-01-11 08:44:16]	INFO	wait request data. fd=258
+[2018-01-11 08:44:31]	INFO	Offline: 258
+[2018-01-11 08:44:31]	INFO	onClose: client[#258@0 #21213]
+[2018-01-11 09:35:32]	INFO	onConnect: client[#259@0 #21213]
+[2018-01-11 09:35:32]	INFO	Offline: 259
+[2018-01-11 09:35:32]	INFO	onClose: client[#259@-1 #21213]
+[2018-01-11 09:43:51]	INFO	onConnect: client[#260@0 #21213]
+[2018-01-11 09:43:58]	INFO	onConnect: client[#261@0 #21213]
+[2018-01-11 09:45:32]	INFO	Offline: 260
+[2018-01-11 09:45:32]	INFO	onClose: client[#260@0 #21213]
+[2018-01-11 09:45:40]	INFO	Offline: 261
+[2018-01-11 09:45:40]	INFO	onClose: client[#261@0 #21213]
+[2018-01-11 10:47:27]	INFO	onConnect: client[#262@0 #21213]
+[2018-01-11 10:47:27]	INFO	Offline: 262
+[2018-01-11 10:47:27]	INFO	onClose: client[#262@0 #21213]
+[2018-01-11 14:51:24]	INFO	onConnect: client[#263@0 #21213]
+[2018-01-11 14:51:24]	INFO	Offline: 263
+[2018-01-11 14:51:24]	INFO	onClose: client[#263@-1 #21213]
+[2018-01-11 14:51:26]	INFO	onConnect: client[#264@0 #21213]
+[2018-01-11 14:51:26]	INFO	Offline: 264
+[2018-01-11 14:51:26]	INFO	onClose: client[#264@-1 #21213]
+[2018-01-11 14:51:26]	INFO	onConnect: client[#265@0 #21213]
+[2018-01-11 14:51:26]	INFO	Offline: 265
+[2018-01-11 14:51:26]	INFO	onClose: client[#265@-1 #21213]
+[2018-01-11 14:51:27]	INFO	onConnect: client[#266@0 #21213]
+[2018-01-11 14:51:27]	INFO	Offline: 266
+[2018-01-11 14:51:27]	INFO	onClose: client[#266@-1 #21213]
+[2018-01-11 14:51:27]	INFO	onConnect: client[#267@0 #21213]
+[2018-01-11 14:51:27]	INFO	Offline: 267
+[2018-01-11 14:51:27]	INFO	onClose: client[#267@-1 #21213]
+[2018-01-11 14:51:38]	INFO	onConnect: client[#268@0 #21213]
+[2018-01-11 14:51:38]	INFO	Offline: 268
+[2018-01-11 14:51:38]	INFO	onClose: client[#268@-1 #21213]
+[2018-01-11 14:51:49]	INFO	onConnect: client[#269@0 #21213]
+[2018-01-11 14:51:49]	INFO	Offline: 269
+[2018-01-11 14:51:49]	INFO	onClose: client[#269@-1 #21213]
+[2018-01-11 14:52:02]	INFO	onConnect: client[#270@0 #21213]
+[2018-01-11 14:52:02]	INFO	Offline: 270
+[2018-01-11 14:52:02]	INFO	onClose: client[#270@-1 #21213]
+[2018-01-11 14:52:04]	INFO	onConnect: client[#271@0 #21213]
+[2018-01-11 14:52:04]	INFO	Offline: 271
+[2018-01-11 14:52:04]	INFO	onClose: client[#271@-1 #21213]
+[2018-01-11 14:52:05]	INFO	onConnect: client[#272@0 #21213]
+[2018-01-11 14:52:05]	INFO	Offline: 272
+[2018-01-11 14:52:05]	INFO	onClose: client[#272@-1 #21213]
+[2018-01-11 14:52:06]	INFO	onConnect: client[#273@0 #21213]
+[2018-01-11 14:52:06]	INFO	Offline: 273
+[2018-01-11 14:52:06]	INFO	onClose: client[#273@-1 #21213]
+[2018-01-11 14:52:20]	INFO	onConnect: client[#274@0 #21213]
+[2018-01-11 14:52:20]	INFO	Offline: 274
+[2018-01-11 14:52:20]	INFO	onClose: client[#274@-1 #21213]
+[2018-01-11 14:52:27]	INFO	onConnect: client[#275@0 #21213]
+[2018-01-11 14:52:27]	INFO	Offline: 275
+[2018-01-11 14:52:27]	INFO	onClose: client[#275@-1 #21213]
+[2018-01-11 14:52:35]	INFO	onConnect: client[#276@0 #21213]
+[2018-01-11 14:52:35]	INFO	Offline: 276
+[2018-01-11 14:52:35]	INFO	onClose: client[#276@-1 #21213]
+[2018-01-11 14:52:35]	INFO	onConnect: client[#277@0 #21213]
+[2018-01-11 14:52:35]	INFO	Offline: 277
+[2018-01-11 14:52:35]	INFO	onClose: client[#277@-1 #21213]
+[2018-01-11 14:52:43]	INFO	onConnect: client[#278@0 #21213]
+[2018-01-11 14:52:43]	INFO	Offline: 278
+[2018-01-11 14:52:43]	INFO	onClose: client[#278@-1 #21213]
+[2018-01-11 14:52:43]	INFO	onConnect: client[#279@0 #21213]
+[2018-01-11 14:52:43]	INFO	Offline: 279
+[2018-01-11 14:52:43]	INFO	onClose: client[#279@-1 #21213]
+[2018-01-11 14:52:45]	INFO	onConnect: client[#280@0 #21213]
+[2018-01-11 14:52:45]	INFO	Offline: 280
+[2018-01-11 14:52:45]	INFO	onClose: client[#280@-1 #21213]
+[2018-01-11 14:52:53]	INFO	onConnect: client[#281@0 #21213]
+[2018-01-11 14:52:53]	INFO	Offline: 281
+[2018-01-11 14:52:53]	INFO	onClose: client[#281@-1 #21213]
+[2018-01-11 14:52:53]	INFO	onConnect: client[#282@0 #21213]
+[2018-01-11 14:52:53]	INFO	Offline: 282
+[2018-01-11 14:52:53]	INFO	onClose: client[#282@-1 #21213]
+[2018-01-11 14:52:54]	INFO	onConnect: client[#283@0 #21213]
+[2018-01-11 14:52:54]	INFO	Offline: 283
+[2018-01-11 14:52:54]	INFO	onClose: client[#283@-1 #21213]
+[2018-01-11 14:52:54]	INFO	onConnect: client[#284@0 #21213]
+[2018-01-11 14:52:54]	INFO	Offline: 284
+[2018-01-11 14:52:54]	INFO	onClose: client[#284@-1 #21213]
+[2018-01-11 14:52:55]	INFO	onConnect: client[#285@0 #21213]
+[2018-01-11 14:52:55]	INFO	Offline: 285
+[2018-01-11 14:52:55]	INFO	onClose: client[#285@-1 #21213]
+[2018-01-11 14:52:56]	INFO	onConnect: client[#286@0 #21213]
+[2018-01-11 14:52:56]	INFO	Offline: 286
+[2018-01-11 14:52:56]	INFO	onClose: client[#286@-1 #21213]
+[2018-01-11 14:53:06]	INFO	onConnect: client[#287@0 #21213]
+[2018-01-11 14:53:06]	INFO	Offline: 287
+[2018-01-11 14:53:06]	INFO	onClose: client[#287@-1 #21213]
+[2018-01-11 14:53:07]	INFO	onConnect: client[#288@0 #21213]
+[2018-01-11 14:53:07]	INFO	Offline: 288
+[2018-01-11 14:53:07]	INFO	onClose: client[#288@-1 #21213]
+[2018-01-11 14:53:07]	INFO	onConnect: client[#289@0 #21213]
+[2018-01-11 14:53:07]	INFO	Offline: 289
+[2018-01-11 14:53:07]	INFO	onClose: client[#289@-1 #21213]
+[2018-01-11 14:53:15]	INFO	onConnect: client[#290@0 #21213]
+[2018-01-11 14:53:15]	INFO	Offline: 290
+[2018-01-11 14:53:15]	INFO	onClose: client[#290@-1 #21213]
+[2018-01-11 14:53:18]	INFO	onConnect: client[#291@0 #21213]
+[2018-01-11 14:53:18]	INFO	Offline: 291
+[2018-01-11 14:53:18]	INFO	onClose: client[#291@-1 #21213]
+[2018-01-11 14:53:22]	INFO	onConnect: client[#292@0 #21213]
+[2018-01-11 14:53:22]	INFO	Offline: 292
+[2018-01-11 14:53:22]	INFO	onClose: client[#292@-1 #21213]
+[2018-01-11 14:53:24]	INFO	onConnect: client[#293@0 #21213]
+[2018-01-11 14:53:24]	INFO	Offline: 293
+[2018-01-11 14:53:24]	INFO	onClose: client[#293@-1 #21213]
+[2018-01-11 14:53:37]	INFO	onConnect: client[#294@0 #21213]
+[2018-01-11 14:53:37]	INFO	Offline: 294
+[2018-01-11 14:53:37]	INFO	onClose: client[#294@-1 #21213]
+[2018-01-11 14:53:38]	INFO	onConnect: client[#295@0 #21213]
+[2018-01-11 14:53:38]	INFO	Offline: 295
+[2018-01-11 14:53:38]	INFO	onClose: client[#295@-1 #21213]
+[2018-01-11 14:53:38]	INFO	onConnect: client[#296@0 #21213]
+[2018-01-11 14:53:38]	INFO	Offline: 296
+[2018-01-11 14:53:38]	INFO	onClose: client[#296@-1 #21213]
+[2018-01-11 14:53:42]	INFO	onConnect: client[#297@0 #21213]
+[2018-01-11 14:53:42]	INFO	Offline: 297
+[2018-01-11 14:53:42]	INFO	onClose: client[#297@-1 #21213]
+[2018-01-11 14:53:50]	INFO	onConnect: client[#298@0 #21213]
+[2018-01-11 14:53:50]	INFO	Offline: 298
+[2018-01-11 14:53:50]	INFO	onClose: client[#298@-1 #21213]
+[2018-01-11 14:53:51]	INFO	onConnect: client[#299@0 #21213]
+[2018-01-11 14:53:51]	INFO	Offline: 299
+[2018-01-11 14:53:51]	INFO	onClose: client[#299@-1 #21213]
+[2018-01-11 14:53:52]	INFO	onConnect: client[#300@0 #21213]
+[2018-01-11 14:53:52]	INFO	Offline: 300
+[2018-01-11 14:53:52]	INFO	onClose: client[#300@-1 #21213]
+[2018-01-11 16:48:16]	INFO	onConnect: client[#301@0 #21213]
+[2018-01-11 16:48:16]	INFO	Offline: 301
+[2018-01-11 16:48:16]	INFO	onClose: client[#301@-1 #21213]
+[2018-01-11 18:23:31]	INFO	onConnect: client[#302@0 #21213]
+[2018-01-11 18:23:31]	INFO	parseHeader failed. header=GET / HTTP/1.0
+[2018-01-11 18:23:31]	INFO	wait request data. fd=302
+[2018-01-11 18:23:33]	INFO	Offline: 302
+[2018-01-11 18:23:33]	INFO	onClose: client[#302@0 #21213]
+[2018-01-11 18:34:38]	INFO	onConnect: client[#303@0 #21213]
+[2018-01-11 18:34:38]	INFO	Offline: 303
+[2018-01-11 18:34:38]	INFO	onClose: client[#303@-1 #21213]
+[2018-01-11 21:12:52]	INFO	onConnect: client[#304@0 #21213]
+[2018-01-11 21:13:10]	INFO	Offline: 304
+[2018-01-11 21:13:10]	INFO	onClose: client[#304@0 #21213]
+[2018-01-11 22:00:45]	INFO	onConnect: client[#305@0 #21213]
+[2018-01-11 22:00:45]	INFO	Offline: 305
+[2018-01-11 22:00:45]	INFO	onClose: client[#305@0 #21213]
+[2018-01-11 22:23:04]	INFO	onConnect: client[#306@0 #21213]
+[2018-01-11 22:23:04]	INFO	Offline: 306
+[2018-01-11 22:23:04]	INFO	onClose: client[#306@0 #21213]
+[2018-01-11 22:23:05]	INFO	onConnect: client[#307@0 #21213]
+[2018-01-11 22:23:05]	INFO	Offline: 307
+[2018-01-11 22:23:05]	INFO	onClose: client[#307@-1 #21213]
+[2018-01-11 22:23:05]	INFO	onConnect: client[#308@0 #21213]
+[2018-01-11 22:23:05]	INFO	Offline: 308
+[2018-01-11 22:23:05]	INFO	onClose: client[#308@-1 #21213]
+[2018-01-11 22:23:06]	INFO	onConnect: client[#309@0 #21213]
+[2018-01-11 22:23:06]	INFO	Offline: 309
+[2018-01-11 22:23:06]	INFO	onClose: client[#309@-1 #21213]
+[2018-01-11 22:23:06]	INFO	onConnect: client[#310@0 #21213]
+[2018-01-11 22:23:07]	INFO	Offline: 310
+[2018-01-11 22:23:07]	INFO	onClose: client[#310@-1 #21213]
+[2018-01-12 00:55:07]	INFO	onConnect: client[#311@0 #21213]
+[2018-01-12 00:55:07]	INFO	Offline: 311
+[2018-01-12 00:55:07]	INFO	onClose: client[#311@-1 #21213]
+[2018-01-12 05:47:15]	INFO	onConnect: client[#312@0 #21213]
+[2018-01-12 05:47:18]	INFO	Offline: 312
+[2018-01-12 05:47:18]	INFO	onClose: client[#312@0 #21213]
+[2018-01-12 07:04:00]	INFO	onConnect: client[#313@0 #21213]
+[2018-01-12 07:04:09]	INFO	Offline: 313
+[2018-01-12 07:04:09]	INFO	onClose: client[#313@0 #21213]
+[2018-01-12 09:30:45]	INFO	onConnect: client[#314@0 #21213]
+[2018-01-12 09:30:48]	INFO	onConnect: client[#315@0 #21213]
+[2018-01-12 09:32:25]	INFO	Offline: 314
+[2018-01-12 09:32:25]	INFO	onClose: client[#314@0 #21213]
+[2018-01-12 09:32:28]	INFO	Offline: 315
+[2018-01-12 09:32:28]	INFO	onClose: client[#315@0 #21213]
+[2018-01-12 14:12:20]	INFO	onConnect: client[#316@0 #21213]
+[2018-01-12 14:12:22]	INFO	Offline: 316
+[2018-01-12 14:12:22]	INFO	onClose: client[#316@-1 #21213]
+[2018-01-12 15:35:29]	INFO	onConnect: client[#317@0 #21213]
+[2018-01-12 15:35:29]	INFO	onConnect: client[#318@0 #21213]
+[2018-01-12 15:35:46]	INFO	Offline: 318
+[2018-01-12 15:35:46]	INFO	onClose: client[#318@0 #21213]
+[2018-01-12 15:35:55]	INFO	SwooleFramework[#0]. running. on shikii.cc:80
+[2018-01-12 15:39:59]	INFO	Offline: 317
+[2018-01-12 15:39:59]	INFO	onClose: client[#317@0 #14102]
+[2018-01-12 15:50:55]	INFO	onConnect: client[#319@0 #14102]
+PHP Notice:  Undefined index: Content-Type in /home/work/avalon_php/vendor/SwooleWeb/Swoole/Http/Parser.php on line 100
+PHP Notice:  Undefined index: Content-Type in /home/work/avalon_php/vendor/SwooleWeb/Swoole/Http/Parser.php on line 107
+PHP Warning:  Error while sending QUERY packet. PID=14102 in /home/work/avalon_php/vendor/SwooleWeb/Swoole/Database/PdoDB.php on line 124
+PHP Notice:  Only variable references should be returned by reference in /home/work/avalon_php/vendor/SwooleWeb/Swoole/Database/PdoDB.php on line 137
+PHP Warning:  Invalid argument supplied for foreach() in /home/work/avalon_php/library/Helper/RedisRoom.php on line 86
+PHP Notice:  Only variable references should be returned by reference in /home/work/avalon_php/vendor/SwooleWeb/Swoole/Database/PdoDB.php on line 137
+PHP Warning:  Invalid argument supplied for foreach() in /home/work/avalon_php/library/Helper/RedisRoom.php on line 86
+[2018-01-15 19:38:18]	INFO	SwooleFramework[#0]. running. on shikii.cc:80
