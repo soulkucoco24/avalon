@@ -1,4 +1,5 @@
 ![](https://raw.github.com/niboge/avalon/master/docs/logo-saber.jpg)
+# 半途而废，转go实现了。。。
 
 # avalon BY 神奇四侠
 ==========================
